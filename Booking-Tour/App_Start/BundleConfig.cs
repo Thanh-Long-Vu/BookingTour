@@ -20,11 +20,21 @@ namespace Booking_Tour
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/popper.min.js",
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/OwlCarousel2-2.2.1/owl.carousel.js",
+                      "~/Scripts/easing/easing.js",
+                      "~/Scripts/custom/custom.js"
+
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/main_style.css",
+                      "~/Content/css/bootstrap/bootstrap.min.css",
+                      "~/Content/css/home/main_style.css",
+                      "~/Content/css/home/responsive.css",
+                      "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
+                      "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
+                      "~/Content/css/plugins/OwlCarousel2-2.2.1/animate.css",
                       "~/Content/fontawesome-all.min.css"));
         }
     }
