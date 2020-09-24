@@ -24,14 +24,24 @@ namespace Booking_Tour
                       "~/Scripts/bootstrap.min.js",
                       "~/Scripts/OwlCarousel2-2.2.1/owl.carousel.js",
                       "~/Scripts/easing/easing.js",
-                      "~/Scripts/custom/custom.js"
-
+                      "~/Scripts/greensock/TweenMax.min.js",
+                      "~/Scripts/greensock/TimelineMax.min.js",
+                      "~/Scripts/greensock/ScrollToPlugin.min.js",
+                      "~/Scripts/greensock/animation.gsap.min.js",
+                      "~/Scripts/scrollmagic/ScrollMagic.min.js",
+                      "~/Scripts/parallax-js-master/parallax.min.js",
+                      "~/Scripts/custom/custom.js",
+                      "~/Scripts/custom/about_custom.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap/bootstrap.min.css",
                       "~/Content/css/home/main_style.css",
+                      "~/Content/css/home/about_styles.css",
                       "~/Content/css/home/responsive.css",
+                      "~/Content/css/home/tours_responsive.css",
+                      "~/Content/css/home/tours_styles.css",
+                      "~/Content/css/home/about_responsive.css",
                       "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
                       "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
                       "~/Content/css/plugins/OwlCarousel2-2.2.1/animate.css",

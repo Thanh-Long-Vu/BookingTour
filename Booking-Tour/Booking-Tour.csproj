@@ -130,15 +130,24 @@
     <Content Include="Content\css\bootstrap\bootstrap-grid.min.css" />
     <Content Include="Content\css\bootstrap\bootstrap-reboot.min.css" />
     <Content Include="Content\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\home\about_responsive.css" />
+    <Content Include="Content\css\home\about_styles.css" />
     <Content Include="Content\css\home\main_style.css" />
+    <Content Include="Content\css\home\tours_responsive.css" />
+    <Content Include="Content\css\home\tours_styles.css" />
     <Content Include="Content\css\home\responsive.css" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\animate.css" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
     <Content Include="Content\images\home_slider_3.jpg" />
     <Content Include="Content\images\home_slider_4.jpg" />
+    <Content Include="Scripts\custom\about_custom.js" />
     <Content Include="Scripts\custom\custom.js" />
     <Content Include="Scripts\easing\easing.js" />
+    <Content Include="Scripts\greensock\animation.gsap.min.js" />
+    <Content Include="Scripts\greensock\ScrollToPlugin.min.js" />
+    <Content Include="Scripts\greensock\TimelineMax.min.js" />
+    <Content Include="Scripts\greensock\TweenMax.min.js" />
     <Content Include="Scripts\OwlCarousel2-2.2.1\owl.carousel.js" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
@@ -304,10 +313,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\parallax-js-master\parallax.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\scrollmagic\ScrollMagic.min.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
@@ -424,6 +435,7 @@
     <Content Include="Views\Home\layouts\Trending.cshtml" />
     <Content Include="Views\Shared\layouts\header.cshtml" />
     <Content Include="Views\Shared\layouts\footer.cshtml" />
+    <Content Include="Views\Home\Tours.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
