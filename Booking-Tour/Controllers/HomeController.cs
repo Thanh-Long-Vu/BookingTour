@@ -15,8 +15,6 @@ namespace Booking_Tour.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
@@ -24,6 +22,11 @@ namespace Booking_Tour.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Tours()
+        {
             return View();
         }
     }

@@ -320,6 +320,7 @@ section {
 *********************************/
 
 .header {
+    position: fixed;
     width: 100%;
     background: rgba(54, 19, 84, 0.6);
     z-index: 12;
@@ -1603,7 +1604,6 @@ section {
         font-size: 12px;
         font-weight: 700;
         color: #2d2c2c;
-        padding: 10px 20px;
         text-transform: uppercase;
         -webkit-transition: all 200ms ease;
         -moz-transition: all 200ms ease;
@@ -1614,9 +1614,6 @@ section {
 
         .offers_link a:hover {
             color: #fa9e1b;
-            background: white;
-            border: 1px solid yellow;
-            border-radius: 10px;
         }
 
 /*********************************

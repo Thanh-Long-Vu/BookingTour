@@ -1,0 +1,352 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+	3.1 Top Bar
+	3.2 Logo
+	3.3 Main Nav
+	3.4 Menu
+4. Home
+	4.1 Home Slider
+	4.2 Home Slider Nav
+	4.3 Home Slider Dots
+5. Search
+6. Section Title
+7. Rating
+8. Stats
+9. Add
+10. Milestones
+11. Footer
+	11.1 Footer - About
+	11.2 Footer - Blog
+	11.3 Footer - Tags
+	11.4 Footer - Contact Info
+12. Copyright
+
+
+******************************/
+
+/***********
+1. Fonts
+***********/
+
+/*********************************
+3. Header
+*********************************/
+/*********************************
+3.1 Top Bar
+*********************************/
+/*********************************
+3.2 Logo
+*********************************/
+/*********************************
+3.3 Main Nav
+*********************************/
+/*********************************
+3.4 Menu
+*********************************/
+/*********************************
+4. Home
+*********************************/
+
+.home
+{
+	width: 100%;
+	height: 465px;
+	background: transparent;
+}
+.home_background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.home_content
+{
+	position: absolute;
+	bottom: 106px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.home_title
+{
+	font-size: 72px;
+	font-weight: 800;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+
+/*********************************
+5. Intro
+*********************************/
+
+.intro
+{
+	width: 100%;
+	padding-top: 92px;
+	padding-bottom: 105px;
+	background: #f6f9fb;
+}
+.intro_image
+{
+	position: absolute;
+    right: 0;
+    top: 13px;
+}
+.intro_title
+{
+	font-size: 30px;
+	font-weight: 700;
+	color: #2d2c2c;
+	text-transform: uppercase;
+}
+.intro_text
+{
+	margin-bottom: 0px;
+	font-weight: 600;
+	color: #929191;
+	margin-top: 60px;
+}
+.intro_button
+{
+	margin-top: 57px;
+	z-index: 1;
+}
+
+/*********************************
+6. Section Title
+*********************************/
+
+.section_title
+{
+	font-size: 30px;
+	font-weight: 700;
+	color: #2d2c2c;
+	margin-top: -8px;
+	text-transform: uppercase;
+}
+
+/*********************************
+8. Stats
+*********************************/
+
+.stats
+{
+	padding-top: 100px;
+	padding-bottom: 105px;
+}
+.stats_text
+{
+	margin-top: 21px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.stats_years
+{
+	padding-left: 116px;
+	padding-right: 116px;
+	margin-top: 39px;
+}
+.stats_contents
+{
+	margin-top: 23px;
+	padding-left: 55px;
+	padding-right: 55px;
+}
+.stats_years div
+{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fa9e1b;
+}
+.stats_item
+{
+	margin-bottom: 24px;
+}
+.stats_item:last-child
+{
+	margin-bottom: 0px;
+}
+.stats_last
+{
+	width: 25%;
+	float: left;
+	padding-left: 60px;
+}
+.stats_new
+{
+	width: 25%;
+	float: left;
+	padding-right: 60px;
+}
+.stats_last_icon
+{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 60px;
+	height: 100%;
+	padding-bottom: 5px;
+}
+.stats_new_icon
+{
+	position: absolute;
+	bottom:0;
+	right:0;
+	width: 60px;
+	height: 100%;
+	padding-bottom: 5px;
+}
+.stats_last_content
+{
+
+}
+.stats_number
+{
+	font-size: 24px;
+	font-weight: 600;
+	color: #2d2c2c;
+}
+.stats_type
+{
+	font-size: 14px;
+	font-weight: 600;
+	color: #929191;
+}
+.stats_bar
+{
+	width: 50%;
+	height: 2px;
+	background: #e1e1e1;
+	float: left;
+	margin-top: 33px;
+}
+.stats_bar_perc
+{
+	position: absolute;
+	top: 0;
+	height: 2px;
+	background: #31124b;
+	max-width: 100% !important;
+}
+.stats_bar_perc div
+{
+	width: 100%;
+}
+.stats_bar_value
+{
+	position: absolute;
+	top: -39px;
+}
+/*********************************
+9. Add
+*********************************/
+
+.add
+{
+	width: 100%;
+}
+.add_background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.add_container
+{
+	padding-top: 52px;
+	padding-bottom: 64px;
+}
+.add_content
+{
+	padding-left: 151px;
+}
+.add_title
+{
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	padding-left: 2px;
+}
+.add_subtitle
+{
+	font-size: 16px;
+	font-weight: 400;
+	color: #FFFFFF;
+	padding-left: 7px;
+}
+.add_subtitle span
+{
+	font-size: 18px;
+	font-weight: 700;
+}
+.add_button
+{
+	margin-top: 30px;
+}
+
+/*********************************
+10. Milestones
+*********************************/
+
+.milestones
+{
+	padding-top: 105px;
+	padding-bottom: 100px;
+}
+.milestone
+{
+	width: 100%;
+}
+.milestone_icon
+{
+	display: inline-block;
+	height: 58px;
+}
+.milestone_icon img
+{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.milestone_counter
+{
+	font-size: 48px;
+	font-weight: 600;
+	color: #2d2c2c;
+	line-height: 1;
+	margin-top: 25px;
+}
+.milestone_text
+{
+	font-size: 14px;
+	font-weight: 600;
+	color: #9a9999;
+	margin-top: 22px;
+	text-transform: uppercase;
+}
