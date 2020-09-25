@@ -31,6 +31,8 @@ namespace Booking_Tour
                       "~/Scripts/scrollmagic/ScrollMagic.min.js",
                       "~/Scripts/parallax-js-master/parallax.min.js",
                       "~/Scripts/custom/custom.js",
+                      "~/Scripts/color_box/jquery.colorbox-min.js",
+                      "~/Scripts/custom/single_listing_custom.js",
                       "~/Scripts/custom/about_custom.js"
                       ));
 
@@ -45,6 +47,8 @@ namespace Booking_Tour
                       "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
                       "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
                       "~/Content/css/plugins/OwlCarousel2-2.2.1/animate.css",
+                      "~/Content/css/home/single_listing_styles.css",
+                      "~/Content/css/home/single_listing_responsive.css",
                       "~/Content/fontawesome-all.min.css"));
         }
     }
