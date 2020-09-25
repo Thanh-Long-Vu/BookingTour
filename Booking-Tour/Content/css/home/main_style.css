@@ -40,11 +40,16 @@
 1. Fonts
 ***********/
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('../../fonts/OpenSans-Regular.ttf');
 
 @font-face {
     font-family: 'Beyond';
-    src: url('../fonts/beyond_the_mountains.otf') format('truetype'), url('../fonts/beyond_the_mountains.ttf') format('opentype');
+    src: url('../../fonts/beyond_the_mountains.otf') format('truetype'), url('../../fonts/beyond_the_mountains.ttf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../fonts/OpenSans-Regular.ttf') format('truetype'), url('../../fonts/beyond_the_mountains.ttf') format('opentype');
 }
 
 /*********************************
@@ -55,7 +60,6 @@
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
@@ -87,7 +91,6 @@ p {
     font-weight: 400;
     color: #929191;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
@@ -106,7 +109,7 @@ p {
 a, a:hover, a:visited, a:active, a:link {
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
@@ -153,7 +156,7 @@ h5 {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 

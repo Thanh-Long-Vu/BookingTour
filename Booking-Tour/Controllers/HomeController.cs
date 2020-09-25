@@ -29,5 +29,10 @@ namespace Booking_Tour.Controllers
         {
             return View();
         }
+
+        public ActionResult ShowTour()
+        {
+            return View();
+        }
     }
 }
