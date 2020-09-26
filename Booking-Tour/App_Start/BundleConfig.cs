@@ -8,8 +8,8 @@ namespace Booking_Tour
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            //           "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -21,34 +21,30 @@ namespace Booking_Tour
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/popper.min.js",
+                      "~/Scripts/custom/jquery.min.js",
+                      "~/Scripts/custom/jquery.easing.1.3.js",
                       "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/OwlCarousel2-2.2.1/owl.carousel.js",
-                      "~/Scripts/easing/easing.js",
-                      "~/Scripts/greensock/TweenMax.min.js",
-                      "~/Scripts/greensock/TimelineMax.min.js",
-                      "~/Scripts/greensock/ScrollToPlugin.min.js",
-                      "~/Scripts/greensock/animation.gsap.min.js",
-                      "~/Scripts/scrollmagic/ScrollMagic.min.js",
-                      "~/Scripts/parallax-js-master/parallax.min.js",
-                      "~/Scripts/custom/custom.js",
-                      "~/Scripts/color_box/jquery.colorbox-min.js",
-                      "~/Scripts/custom/single_listing_custom.js",
-                      "~/Scripts/custom/about_custom.js"
+                      "~/Scripts/custom/jquery.waypoints.min.js",
+                      "~/Scripts/custom/jquery.flexslider-min.js",
+                      "~/Scripts/custom/owl.carousel.min.js",
+                      "~/Scripts/custom/jquery.magnific-popup.min.js",
+                      "~/Scripts/custom/magnific-popup-options.js",
+                      "~/Scripts/custom/bootstrap-datepicker.js",
+                      "~/Scripts/custom/jquery.stellar.min.js",
+                      "~/Scripts/custom/main.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/css/home/animate.css",
+                      "~/Content/css/home/icomoon.css",
                       "~/Content/css/bootstrap/bootstrap.min.css",
-                      "~/Content/css/home/main_style.css",
-                      "~/Content/css/home/about_styles.css",
-                      "~/Content/css/home/responsive.css",
-                      "~/Content/css/home/tours_responsive.css",
-                      "~/Content/css/home/tours_styles.css",
-                      "~/Content/css/home/about_responsive.css",
-                      "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
-                      "~/Content/css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
-                      "~/Content/css/plugins/OwlCarousel2-2.2.1/animate.css",
-                      "~/Content/css/home/single_listing_styles.css",
-                      "~/Content/css/home/single_listing_responsive.css",
+                      "~/Content/css/home/magnific-popup.css",
+                      "~/Content/css/home/flexslider.css",
+                      "~/Content/css/home/owl.carousel.min.css",
+                      "~/Content/css/home/owl.theme.default.min.css",
+                      "~/Content/css/home/bootstrap-datepicker.css",
+                      "~/Content/css/fonts/flaticon/flaticon.css",
+                      "~/Content/css/home/style.css",
                       "~/Content/fontawesome-all.min.css"));
         }
     }
