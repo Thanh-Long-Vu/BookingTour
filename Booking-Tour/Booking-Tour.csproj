@@ -378,6 +378,14 @@
     <Content Include="Views\Home\layouts\TopSlider.cshtml" />
     <Content Include="Views\Home\layouts\SearchBar.cshtml" />
     <Content Include="Views\Home\layouts\Description.cshtml" />
+    <Content Include="Views\Home\layouts\PopularDestination.cshtml" />
+    <Content Include="Views\Home\layouts\Sale.cshtml" />
+    <Content Include="Views\Home\layouts\RecommendedTours.cshtml" />
+    <Content Include="Views\Home\layouts\OurTeam.cshtml" />
+    <Content Include="Views\Home\Tours.cshtml" />
+    <Content Include="Views\Home\tours\TopSlide.cshtml" />
+    <Content Include="Views\Home\tours\ToursList.cshtml" />
+    <Content Include="Views\Home\tours\ToursSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,23 +3,16 @@
         <div class="container-fluid">
             <div class="row d-flex justify-content-between">
                 <div class="col-xs-2">
-                    <div id="colorlib-logo"><a href="#">Tour</a></div>
+                    <div id="colorlib-logo">@Html.ActionLink("VietNam Travel","Index", "Home")</div>
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li class="has-dropdown">
-                            <a href="#">Tours</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Destination</a></li>
-                                <li><a href="#">Cruises</a></li>
-                                <li><a href="#">Hotels</a></li>
-                                <li><a href="#">Booking</a></li>
-                            </ul>
+                        <li class="active">
+                            @Html.ActionLink("Home","Index", "Home")
                         </li>
-                        <li><a href="#">Hotels</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li class="has-dropdown">
+                            @Html.ActionLink("Tours", "Tours", "Home")
+                        </li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
