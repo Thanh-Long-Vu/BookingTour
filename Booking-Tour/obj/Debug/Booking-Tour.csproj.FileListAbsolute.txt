@@ -173,8 +173,14 @@ D:\Learn\LTQL\Booking\Booking-Tour\bin\System.Web.WebPages.xml
 D:\Learn\LTQL\Booking\Booking-Tour\bin\System.Web.WebPages.Deployment.xml
 D:\Learn\LTQL\Booking\Booking-Tour\bin\System.Web.WebPages.Razor.xml
 D:\Learn\LTQL\Booking\Booking-Tour\bin\Antlr3.Runtime.pdb
-D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csprojAssemblyReference.cache
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.CoreCompileInputs.cache
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.CopyComplete
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.dll
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.pdb
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.dll
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.SqlServer.dll
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.xml
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.SqlServer.xml
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking_Tour.Migrations.UserTable.resources
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.GenerateResource.cache
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking_Tour.Migrations.OrderTable.resources
