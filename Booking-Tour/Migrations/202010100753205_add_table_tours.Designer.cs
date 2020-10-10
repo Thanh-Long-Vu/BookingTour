@@ -7,13 +7,13 @@ namespace Booking_Tour.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Create_Table : IMigrationMetadata
+    public sealed partial class add_table_tours : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Create_Table));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(add_table_tours));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010020319377_Create_Table"; }
+            get { return "202010100753205_add_table_tours"; }
         }
         
         string IMigrationMetadata.Source

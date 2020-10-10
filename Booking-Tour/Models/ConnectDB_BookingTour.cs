@@ -8,17 +8,10 @@ namespace Booking_Tour.Models
 
     public partial class ConnectDB_BookingTour : DbContext
     {
-        public virtual DbSet<bills> bills { get; set; }
-        public virtual DbSet<users> users { get; set; }
-        public virtual DbSet<categorys> categorys { get; set; }
-        public virtual DbSet<orders> orders { get; set; }
-        public virtual DbSet<products> products { get; set; }
-        public virtual DbSet<region> regions { get; set; }
-        public virtual DbSet<provinces> provinces { get; set; }
-        public virtual DbSet<ratings> ratings { get; set; }
-        public virtual DbSet<uti_pro> uti_pro { get; set; }
-        public virtual DbSet<utilities> utilities { get; set; }
-        public virtual DbSet<product_types> product_types { get; set; }
+        //public virtual DbSet<bills> bills { get; set; }
+        public virtual DbSet<Regions> Regions { get; set; }
+        public virtual DbSet<Provinces> Provinces { get; set; }
+        public virtual DbSet<Tours> Tours { get; set; }
         public ConnectDB_BookingTour()
             : base("name=ConnectDB_BookingTour")
         {

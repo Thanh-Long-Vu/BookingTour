@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Booking_Tour.Models
 {
-    public class provinces
+    public class Provinces
     {
-        [Key]
         public int id { get; set; }
         public string name { get; set; }
-        public string ma_tp { get; set; }
-        public region region { get; set; }
+        public int region_id { get; set; }
+        [ForeignKey("region_id")]
+        public Regions Regions { get; set; }
+        public ICollection<Tours> Tours { get; set; }
+
     }
 }

@@ -138,24 +138,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010020319377_Create_Table.cs" />
-    <Compile Include="Migrations\202010020319377_Create_Table.designer.cs">
-      <DependentUpon>202010020319377_Create_Table.cs</DependentUpon>
+    <Compile Include="Migrations\202010091545401_add_table_regions_and_provinces.cs" />
+    <Compile Include="Migrations\202010091545401_add_table_regions_and_provinces.designer.cs">
+      <DependentUpon>202010091545401_add_table_regions_and_provinces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010100753205_add_table_tours.cs" />
+    <Compile Include="Migrations\202010100753205_add_table_tours.designer.cs">
+      <DependentUpon>202010100753205_add_table_tours.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\bills.cs" />
-    <Compile Include="Models\categorys.cs" />
     <Compile Include="Models\ConnectDB_BookingTour.cs" />
-    <Compile Include="Models\image_products.cs" />
-    <Compile Include="Models\orders.cs" />
-    <Compile Include="Models\products.cs" />
-    <Compile Include="Models\product_types.cs" />
-    <Compile Include="Models\provinces.cs" />
-    <Compile Include="Models\ratings.cs" />
-    <Compile Include="Models\region.cs" />
-    <Compile Include="Models\users.cs" />
-    <Compile Include="Models\utilities.cs" />
-    <Compile Include="Models\uti_pro.cs" />
+    <Compile Include="Models\Provinces.cs" />
+    <Compile Include="Models\Regions.cs" />
+    <Compile Include="Models\Tours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -433,8 +428,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010020319377_Create_Table.resx">
-      <DependentUpon>202010020319377_Create_Table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010091545401_add_table_regions_and_provinces.resx">
+      <DependentUpon>202010091545401_add_table_regions_and_provinces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010100753205_add_table_tours.resx">
+      <DependentUpon>202010100753205_add_table_tours.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

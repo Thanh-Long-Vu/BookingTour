@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Booking_Tour.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,10 @@ namespace Booking_Tour.Controllers
 {
     public class HomeController : Controller
     {
+        private ConnectDB_BookingTour db = new ConnectDB_BookingTour();
         public ActionResult Index()
         {
-            return View();
+            return View(db.Tours.Take(8));
         }
 
         public ActionResult About()

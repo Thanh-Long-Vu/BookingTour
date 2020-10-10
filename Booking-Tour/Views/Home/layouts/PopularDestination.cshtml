@@ -1,4 +1,5 @@
-﻿<div class="colorlib-tour colorlib-light-grey">
+﻿@model IEnumerable<Booking_Tour.Models.Tours>
+<div class="colorlib-tour colorlib-light-grey">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center colorlib-heading animate-box">
@@ -8,157 +9,27 @@
         </div>
     </div>
     <div class="tour-wrap">
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style="background-image: url(../../../Content/images/tour-1.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span> 
-                    545 Reviews
-                </p>
-                <h2>Athens, Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-2.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Thailand</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-3.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Philippines</h2>
-                <span class="city">Lipa, Philippines</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-4.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-5.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-6.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-7.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
-        <a href="#" class="tour-entry animate-box">
-            <div class="tour-img" style=" background-image: url(../../../Content/images/tour-8.jpg);">
-            </div>
-            <div class="desc">
-                <p class="star">
-                    <span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                    545 Reviews
-                </p>
-                <h2>Family Tour in Greece</h2>
-                <span class="city">Athens, Greece</span>
-                <span class="price">$450</span>
-            </div>
-        </a>
+        @foreach (var tour in Model)
+        {
+            <a href="#" class="tour-entry animate-box">
+                <div class="tour-img" style="background-image: url(../../../Content/images/tour-1.jpg);">
+                </div>
+                <div class="desc">
+                    <p class="star">
+                        <span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                        545 Reviews
+                    </p>
+                    <h2>@tour.name</h2>
+                    <span class="city">Đây là tỉnh</span>
+                    <span class="price">@tour.price</span>
+                </div>
+            </a>
+        }
     </div>
 </div>

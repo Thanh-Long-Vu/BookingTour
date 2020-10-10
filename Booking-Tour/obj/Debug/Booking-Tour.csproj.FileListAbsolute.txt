@@ -173,7 +173,6 @@ D:\Learn\LTQL\Booking\Booking-Tour\bin\System.Web.WebPages.xml
 D:\Learn\LTQL\Booking\Booking-Tour\bin\System.Web.WebPages.Deployment.xml
 D:\Learn\LTQL\Booking\Booking-Tour\bin\System.Web.WebPages.Razor.xml
 D:\Learn\LTQL\Booking\Booking-Tour\bin\Antlr3.Runtime.pdb
-D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csprojAssemblyReference.cache
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.CoreCompileInputs.cache
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.CopyComplete
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.dll
@@ -248,3 +247,14 @@ E:\E\source\BookingTour\Booking-Tour\bin\Microsoft.Configuration.ConfigurationBu
 E:\E\source\BookingTour\Booking-Tour\obj\Debug\Booking-Tour.csprojAssemblyReference.cache
 E:\E\source\BookingTour\Booking-Tour\obj\Debug\Booking_Tour.Migrations.Create_Table.resources
 E:\E\source\BookingTour\Booking-Tour\obj\Debug\Booking-Tour.csproj.GenerateResource.cache
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.dll
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.SqlServer.dll
+D:\Learn\LTQL\Booking\Booking-Tour\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+D:\Learn\LTQL\Booking\Booking-Tour\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.xml
+D:\Learn\LTQL\Booking\Booking-Tour\bin\EntityFramework.SqlServer.xml
+D:\Learn\LTQL\Booking\Booking-Tour\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+D:\Learn\LTQL\Booking\Booking-Tour\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking_Tour.Migrations.add_table_regions_and_provinces.resources
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.GenerateResource.cache
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking_Tour.Migrations.add_table_tours.resources

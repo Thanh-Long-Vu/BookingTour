@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Booking_Tour.Models
 {
-    public class categorys
+    public class Tours
     {
         [Key]
         public int id { get; set; }
+
         [StringLength(30), Required]
         public string name { get; set; }
+        public string day { get; set; }
+        public string description { get; set; }
+        [Required]
+        public int price { get; set; }
+        public bool status { get; set; }
         [MaxLength(255), Required]
         public string avatar { get; set; }
-        public int status { get; set; }
-        public users user { get; set; }
-        public region region { get; set; }
-
-        [MaxLength(255), Required]
-        public string description { get; set; }
-        public int point { get; set; }
-        public ICollection<products> products { get; set; }
-        public ICollection<ratings> ratings { get; set; }
-
         public DateTime created_at { get; set; }
         public DateTime update_at { get; set; }
+
+        public int provinces_id { get; set; }
+        [ForeignKey("provinces_id")]
+        public Provinces Provinces { get; set; }
+
+        //public ICollection<image_products> image_products { get; set; }
+        
     }
 }
