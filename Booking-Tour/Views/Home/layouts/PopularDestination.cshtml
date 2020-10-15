@@ -8,11 +8,11 @@
             </div>
         </div>
     </div>
-    <div class="tour-wrap">
+    <div class="tour-wrap d-flex flex-wrap justify-content-center align-items-center">
         @foreach (var tour in ViewBag.Tours)
         {
-            <a href="#" class="tour-entry animate-box">
-                <div class="tour-img" style="background-image: url(../../../Content/images/tour-1.jpg);">
+            <a href="#" class="tour-entry animate-box m-3">
+                <div class="tour-img" style="background-image: url(../../../Content/images/@tour.avatar);">
                 </div>
                 <div class="desc">
                     <p class="star">

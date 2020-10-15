@@ -12,7 +12,7 @@ namespace Booking_Tour.Controllers
         private ConnectDB_BookingTour db = new ConnectDB_BookingTour();
         public ActionResult Index()
         {
-            var tours = (from t in db.Tours select t).Take(8);
+            var tours = (from t in db.Tours select t).Take(6);
             ViewBag.Tours = tours;
             return View();
         }

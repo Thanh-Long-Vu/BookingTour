@@ -258,3 +258,4 @@ D:\Learn\LTQL\Booking\Booking-Tour\bin\Microsoft.Configuration.ConfigurationBuil
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking_Tour.Migrations.add_table_regions_and_provinces.resources
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csproj.GenerateResource.cache
 D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking_Tour.Migrations.add_table_tours.resources
+D:\Learn\LTQL\Booking\Booking-Tour\obj\Debug\Booking-Tour.csprojAssemblyReference.cache

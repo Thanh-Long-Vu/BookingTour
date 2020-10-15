@@ -26,17 +26,17 @@
                 new Provinces
                 {
                     name = "Hà Nội",
-                    region_id = 1,
+                    region_id = context.Regions.FirstOrDefault(r => r.name == "Miền Bắc").id
                 },
                 new Provinces
                 {
                     name = "Lào Cai",
-                    region_id = 1,
+                    region_id = context.Regions.FirstOrDefault(r => r.name == "Miền Bắc").id
                 },
                 new Provinces
                 {
                     name = "Mộc Châu",
-                    region_id = 1,
+                    region_id = context.Regions.FirstOrDefault(r => r.name == "Miền Bắc").id
                 }
             );
 
@@ -48,10 +48,10 @@
                     description = "Mô tả ở đây",
                     price = 100,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-2.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 3,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Hà Nội").id,
                 },
                 new Tours
                 {
@@ -60,10 +60,10 @@
                     description = "Mô tả ở đây",
                     price = 200,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-1.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 2,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Lào Cai").id,
                 },
                 new Tours
                 {
@@ -72,10 +72,10 @@
                     description = "Mô tả ở đây",
                     price = 100,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-3.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 4,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Hà Nội").id,
                 },
                 new Tours
                 {
@@ -84,10 +84,10 @@
                     description = "Mô tả ở đây",
                     price = 100,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-4.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 2,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Lào Cai").id,
                 },
                 new Tours
                 {
@@ -96,10 +96,10 @@
                     description = "Mô tả ở đây",
                     price = 100,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-5.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 2,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Lào Cai").id,
                 },
                 new Tours
                 {
@@ -108,10 +108,10 @@
                     description = "Mô tả ở đây",
                     price = 1000,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-6.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 4,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Lào Cai").id,
                 },
                 new Tours
                 {
@@ -120,10 +120,10 @@
                     description = "Mô tả ở đây",
                     price = 1500,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-7.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 3,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Hà Nội").id,
                 },
                 new Tours
                 {
@@ -132,10 +132,10 @@
                     description = "Mô tả ở đây",
                     price = 100000,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-8.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 2,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Hà Nội").id,
                 },
                 new Tours
                 {
@@ -144,10 +144,10 @@
                     description = "Mô tả ở đây",
                     price = 1500,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-2.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 3,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Hà Nội").id,
                 },
                 new Tours
                 {
@@ -156,10 +156,10 @@
                     description = "Mô tả ở đây",
                     price = 100000,
                     status = true,
-                    avatar = "Đây là ảnh",
+                    avatar = "tour-6.jpg",
                     created_at = DateTime.Today,
                     update_at = DateTime.Today,
-                    provinces_id = 2,
+                    provinces_id = context.Provinces.FirstOrDefault(p => p.name == "Mộc Châu").id,
                 }
             );
         }
