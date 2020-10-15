@@ -414,6 +414,7 @@
     <Content Include="Views\Home\tours\TopSlide.cshtml" />
     <Content Include="Views\Home\tours\ToursList.cshtml" />
     <Content Include="Views\Home\tours\ToursSearch.cshtml" />
+    <Content Include="Views\Home\ShowTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "ShowTour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style=" background-image: url(../../../Content/images/cover-img-3.jpg);">
+                <div class="overlay"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 slider-text">
+                            <div class="slider-text-inner text-center">
+                                <h2>by colorlib.com</h2>
+                                <h1>@ViewBag.Tour.name</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
