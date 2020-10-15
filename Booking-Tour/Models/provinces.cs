@@ -12,7 +12,7 @@ namespace Booking_Tour.Models
         public string name { get; set; }
         public int region_id { get; set; }
         [ForeignKey("region_id")]
-        public Regions Regions { get; set; }
+        public virtual Regions Regions { get; set; }
         public ICollection<Tours> Tours { get; set; }
 
     }

@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="tour-wrap">
-        @foreach (var tour in Model)
+        @foreach (var tour in ViewBag.Tours)
         {
             <a href="#" class="tour-entry animate-box">
                 <div class="tour-img" style="background-image: url(../../../Content/images/tour-1.jpg);">
@@ -26,7 +26,11 @@
                         545 Reviews
                     </p>
                     <h2>@tour.name</h2>
-                    <span class="city">Đây là tỉnh</span>
+                    <span class="city">
+                        @tour.Provinces.name
+                        /
+                        @tour.Provinces.Regions.name
+                    </span>
                     <span class="price">@tour.price</span>
                 </div>
             </a>

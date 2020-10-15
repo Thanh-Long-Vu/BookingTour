@@ -26,7 +26,7 @@ namespace Booking_Tour.Models
 
         public int provinces_id { get; set; }
         [ForeignKey("provinces_id")]
-        public Provinces Provinces { get; set; }
+        public virtual Provinces Provinces { get; set; }
 
         //public ICollection<image_products> image_products { get; set; }
         
