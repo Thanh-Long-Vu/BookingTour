@@ -243,8 +243,8 @@
 		      }
 		   },
 		   navText: [
-		      "<i class='fas fa-chevron-left owl-direction'></i>",
-		      "<i class='fas fa-chevron-right owl-direction'></i>"
+			   "<i class='fas fa-angle-left owl-direction'></i>",
+		      "<i class='fas fa-angle-right owl-direction'></i>"
 	     	]
 		});
 
@@ -260,8 +260,8 @@
 		   autoHeight: true,
 		   items: 1,
 		   navText: [
-		      "<i class='icon-chevron-left owl-direction'></i>",
-		      "<i class='icon-chevron-right owl-direction'></i>"
+		      "<i class='fas fa-angle-left owl-direction'></i>",
+		      "<i class='fas fa-angle-right owl-direction'></i>"
 	     	]
 		});
 	};

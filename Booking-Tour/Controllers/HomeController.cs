@@ -13,6 +13,11 @@ namespace Booking_Tour.Controllers
         private ConnectDB_BookingTour db = new ConnectDB_BookingTour();
         public ActionResult Index()
         {
+            ViewBag.ActiveHome = null;
+            if (Request.CurrentExecutionFilePath == "/" || Request.CurrentExecutionFilePath == "/Home/Index")
+            {
+                ViewBag.ActiveHome = "active";
+            }
             var tours = (from t in db.Tours select t).Take(6);
             var recommendedTours = (from ot in db.Tours 
                                     where ot.Provinces.name == "Hà Nội"
@@ -25,18 +30,31 @@ namespace Booking_Tour.Controllers
 
         public ActionResult About()
         {
+            ViewBag.ActiveAbout = null;
+            if (Request.CurrentExecutionFilePath == "/Home/About")
+            {
+                ViewBag.ActiveAbout = "active";
+            }
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.ActiveContact = null;
+            if (Request.CurrentExecutionFilePath == "/Home/Contact")
+            {
+                ViewBag.ActiveContact = "active";
+            }
             return View();
         }
 
         public ActionResult Tours()
         {
+            ViewBag.ActiveTours = null;
+            if (Request.CurrentExecutionFilePath == "/Home/Tours")
+            {
+                ViewBag.ActiveTours = "active";
+            }
             ViewBag.Provinces = (from p in db.Provinces select p).ToList();
             ViewBag.Tours = (from t in db.Tours select t).ToList();
             return View();

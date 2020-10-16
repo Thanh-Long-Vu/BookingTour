@@ -200,7 +200,6 @@
     <Content Include="Content\images\loc.png" />
     <Content Include="Content\images\person1.jpg" />
     <Content Include="Content\images\person2.jpg" />
-    <Content Include="Content\images\person3.jpg" />
     <Content Include="Content\images\room-1.jpg" />
     <Content Include="Content\images\room-2.jpg" />
     <Content Include="Content\images\room-3.jpg" />

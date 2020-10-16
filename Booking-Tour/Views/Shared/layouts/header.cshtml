@@ -7,14 +7,18 @@
                 </div>
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
-                        <li class="active">
+                        <li class="@ViewBag.ActiveHome">
                             @Html.ActionLink("Home","Index", "Home")
                         </li>
-                        <li class="has-dropdown">
+                        <li class="@ViewBag.ActiveTours">
                             @Html.ActionLink("Tours", "Tours", "Home")
                         </li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li class="@ViewBag.ActiveAbout">
+                            @Html.ActionLink("About", "About", "Home")
+                        </li>
+                        <li class="@ViewBag.ActiveContact">
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                        </li>
                     </ul>
                 </div>
             </div>
