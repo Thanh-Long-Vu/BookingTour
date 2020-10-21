@@ -11,7 +11,7 @@
     <div class="tour-wrap d-flex flex-wrap justify-content-center align-items-center">
         @foreach (var tour in ViewBag.Tours)
         {
-            <a href="#" class="tour-entry animate-box m-3">
+            <a href="@Url.Action("ShowTour", "Home", new { id = tour.id })" class="tour-entry animate-box m-3">
                 <div class="tour-img" style="background-image: url(../../../Content/images/@tour.avatar);">
                 </div>
                 <div class="desc">

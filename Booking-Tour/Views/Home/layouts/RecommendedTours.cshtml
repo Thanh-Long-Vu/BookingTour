@@ -15,8 +15,9 @@
                                 @foreach (var item in ViewBag.RecommendedTours)
                                 {
                                     <div class="col-md-6 animate-box">
-                                        <a href="#" class="f-tour-img" style="background-image: url(../../../Content/images/@item.avatar);">
+                                        <a href="@Url.Action("ShowTour", "Home", new { id = item.id })" class="f-tour-img" style="background-image: url(../../../Content/images/@item.avatar);">
                                             <div class="desc">
+                                                <h3><b>@item.name</b></h3>
                                                 <h3>@item.Provinces.name - @item.day</h3>
                                                 <p class="price"><span>$@item.price</span> <small>/ person</small></p>
                                             </div>
