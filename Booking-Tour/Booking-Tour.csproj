@@ -146,11 +146,16 @@
     <Compile Include="Migrations\202010100753205_add_table_tours.designer.cs">
       <DependentUpon>202010100753205_add_table_tours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010280927493_add-table-users.cs" />
+    <Compile Include="Migrations\202010280927493_add-table-users.designer.cs">
+      <DependentUpon>202010280927493_add-table-users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ConnectDB_BookingTour.cs" />
     <Compile Include="Models\Provinces.cs" />
     <Compile Include="Models\Regions.cs" />
     <Compile Include="Models\Tours.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -434,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010100753205_add_table_tours.resx">
       <DependentUpon>202010100753205_add_table_tours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010280927493_add-table-users.resx">
+      <DependentUpon>202010280927493_add-table-users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
