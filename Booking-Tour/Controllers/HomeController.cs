@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -73,6 +75,70 @@ namespace Booking_Tour.Controllers
             }
             ViewBag.Tour = tour;
             return View();
+        }
+        /*Start Login */
+        //POST: Register
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(Users _user)
+        {
+            if (ModelState.IsValid)
+            {
+                var check = db.Users.FirstOrDefault(s => s.email == _user.email);
+                if (check == null)
+                {
+                    _user.password = GetMD5(_user.password);
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.Users.Add(_user);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.error = "Email already exists";
+                    return Redirect(Request.UrlReferrer.ToString());
+                }
+            }
+            return Redirect(Request.UrlReferrer.ToString());
+        }
+        /*End Register*/
+        /*Start Login*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string email, string password)
+        {
+            if (ModelState.IsValid)
+            {
+                var f_password = GetMD5(password);
+                var data = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(f_password)).ToList();
+                if (data.Count() > 0)
+                {
+                    //add session
+                    Session["Name"] = data.FirstOrDefault().name;
+                    Session["idUser"] = data.FirstOrDefault().id;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.error = "Login failed";
+                    return Redirect(Request.UrlReferrer.ToString());
+                }
+            }
+            return Redirect(Request.UrlReferrer.ToString());
+        }
+
+        /*End Login*/
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] fromData = Encoding.UTF8.GetBytes(str);
+            byte[] targetData = md5.ComputeHash(fromData);
+            string byte2String = null;
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                byte2String += targetData[i].ToString("x2");
+            }
+            return byte2String;
         }
     }
 }

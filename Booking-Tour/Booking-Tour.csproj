@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,6 +205,7 @@
     <Content Include="Content\images\img_bg_5.jpg" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\loc.png" />
+    <Content Include="Content\images\Login\form.jpg" />
     <Content Include="Content\images\person1.jpg" />
     <Content Include="Content\images\person2.jpg" />
     <Content Include="Content\images\room-1.jpg" />
@@ -420,6 +422,8 @@
     <Content Include="Views\Home\tours\ToursList.cshtml" />
     <Content Include="Views\Home\tours\ToursSearch.cshtml" />
     <Content Include="Views\Home\ShowTour.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

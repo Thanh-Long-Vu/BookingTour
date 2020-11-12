@@ -1,0 +1,65 @@
+﻿@model Booking_Tour.Models.Users
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="page-content">
+    <div class="form-v8-content">
+        <div class="form-left">
+            <img src="../../../Content/images/Login/form.jpg" alt="form" class="h-100">
+        </div>
+        <div class="form-right d-flex justify-content-center flex-column">
+            <div class="tab">
+                <div class="tab-inner">
+                    <button class="tablinks">REGISTER</button>
+                </div>
+            </div>
+            @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @class = "form-detail" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="tabcontent" id="sign-up">
+                    <div class="form-row">
+                        <div class="form-row-inner">
+                            @Html.LabelFor(m => m.name, "User Name")
+                            @Html.EditorFor(m => m.name, new { htmlAttributes = new { @class = "form-control", @placeholder = "User Name" } })
+                            <span class="border"></span>
+                            @Html.ValidationMessageFor(m => m.name, "User Name is required and not too 30 character.", new { @class = "badge badge-danger py-2 px-4 m-2" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-inner">
+                            @Html.LabelFor(m => m.email, "E-Mail")
+                            @Html.TextBoxFor(m => m.email, "", new { @class = "form-control", @placeholder = "Email" })
+                            @Html.ValidationMessageFor(m => m.email, "It's must be an email address", new { @class = "badge badge-danger py-2 px-4 m-2" })
+                            @if (ViewBag.error != null)
+                            {
+                                <span class="badge badge-danger">@ViewBag.error</span>
+                            }
+                            <span class="border"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-inner">
+                            @Html.LabelFor(m => m.password, "Password")
+                            @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Password" })
+                            @Html.ValidationMessageFor(m => m.password, "Password is not valid", new { @class = "badge badge-danger py-2 px-4 m-2" })
+                            <span class="border"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-inner">
+                            @Html.LabelFor(m => m.confirmPassword, "Confirm Password")
+                            @Html.PasswordFor(m => m.confirmPassword, new { @class = "form-control", @placeholder = "Confim Password" })
+                            @Html.ValidationMessageFor(m => m.confirmPassword, "Confirm Password does not macth with Password", new { @class = "badge badge-danger py-2 px-4 m-2" })
+                            <span class="border"></span>
+                        </div>
+                    </div>
+                    <div class="form-row-last text-center mt-3">
+                        <input type="submit" name="register" class="register" value="Register">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
