@@ -24,10 +24,32 @@
                 <div class="col-3">
                     @if (Session["idUser"] != null)
                     {
-                        <ul class="text-light text-right">
-                            <li class="mr-3">WelCome: @Session["Name"].ToString()</li>
-                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                        </ul>
+                    <nav class="navbar navbar-expand-lg navbar-light text-center menu-1">
+                        @*<ul class="text-light text-right">*@
+                            @*<li class="mr-3">WelCome: @Session["Name"].ToString()</li>*@
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse text-light text-right" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item dropdown">
+                                        <a class="mr-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            WelCome: @Session["Name"].ToString()
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="mr-3 ">
+                                            @Html.ActionLink("Logout", "Logout", "Account")
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        @*</ul>*@
+                    </nav>
                     }
                     else
                     {
@@ -36,7 +58,7 @@
                             <li>@Html.ActionLink("Register", "Register", "Account")</li>
                         </ul>
                     }
-                    
+
                 </div>
             </div>
         </div>
