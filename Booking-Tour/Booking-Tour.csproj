@@ -135,6 +135,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -151,7 +152,12 @@
     <Compile Include="Migrations\202010280927493_add-table-users.designer.cs">
       <DependentUpon>202010280927493_add-table-users.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011130222074_create_table_bills.cs" />
+    <Compile Include="Migrations\202011130222074_create_table_bills.designer.cs">
+      <DependentUpon>202011130222074_create_table_bills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bills.cs" />
     <Compile Include="Models\ConnectDB_BookingTour.cs" />
     <Compile Include="Models\Provinces.cs" />
     <Compile Include="Models\Regions.cs" />
@@ -424,6 +430,7 @@
     <Content Include="Views\Home\ShowTour.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Booking\Booking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -446,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010280927493_add-table-users.resx">
       <DependentUpon>202010280927493_add-table-users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011130222074_create_table_bills.resx">
+      <DependentUpon>202011130222074_create_table_bills.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

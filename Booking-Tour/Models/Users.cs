@@ -24,5 +24,6 @@ namespace Booking_Tour.Models
         [MaxLength(255)]
         public string avatar { get; set; }
         public bool role { get; set; }
+        public ICollection<Bills> Bills { get; set; }
     }
 }
