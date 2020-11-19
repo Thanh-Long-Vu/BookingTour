@@ -11,7 +11,7 @@ namespace Booking_Tour.Models
     {
         [Key]
         public int id { get; set; }
-        [Required, MinLength(0)]
+        [Required, Range(0, 10000000)]
         public int payments { get; set; }
         public int discount { get; set; }
         public int total_price { get; set; }
