@@ -13,6 +13,9 @@ namespace Booking_Tour.Models
         public int id { get; set; }
         [Required, MinLength(0)]
         public int payments { get; set; }
+        public int discount { get; set; }
+        public int total_price { get; set; }
+        public int person { get; set; }
         public bool status { get; set; }
         public int user_id { get; set; }
         [ForeignKey("user_id")]

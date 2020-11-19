@@ -156,6 +156,10 @@
     <Compile Include="Migrations\202011130222074_create_table_bills.designer.cs">
       <DependentUpon>202011130222074_create_table_bills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011180916355_arlet_table_bills.cs" />
+    <Compile Include="Migrations\202011180916355_arlet_table_bills.designer.cs">
+      <DependentUpon>202011180916355_arlet_table_bills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bills.cs" />
     <Compile Include="Models\ConnectDB_BookingTour.cs" />
@@ -456,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011130222074_create_table_bills.resx">
       <DependentUpon>202011130222074_create_table_bills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011180916355_arlet_table_bills.resx">
+      <DependentUpon>202011180916355_arlet_table_bills.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

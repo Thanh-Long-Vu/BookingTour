@@ -14,6 +14,11 @@ namespace Booking_Tour.Controllers
         // GET: Booking
         public ActionResult Booking(int? id)
         {
+            if(Session["idUser"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -27,8 +32,13 @@ namespace Booking_Tour.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult CreateBill()
         {
+            if (Session["idUser"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
             return Redirect("");
         }    
     }
