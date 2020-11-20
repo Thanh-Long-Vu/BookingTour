@@ -12,7 +12,7 @@ namespace Booking_Tour.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        ConnectDB_BookingTour _db = new ConnectDB_BookingTour();
+        ConnectDB_BookingTour db = new ConnectDB_BookingTour();
         public ActionResult Login()
         {
             return View();
@@ -27,6 +27,10 @@ namespace Booking_Tour.Controllers
         {
             Session.Abandon();//remove session
             return RedirectToAction("Login");
+        }
+        public ActionResult SettingsAccount()
+        {
+            return View();
         }
     }
 }

@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6, figure {
         .colorlib-nav ul li a {
             position: relative;
             font-size: 15px;
-            padding: 30px 12px;
+            padding: 12px 12px;
             color: rgba(255, 255, 255, 0.7);
             -webkit-transition: 0.5s;
             -o-transition: 0.5s;
@@ -3011,3 +3011,10 @@ input[type="text"] {
     color: white;
     background-color: #131212;
 }
+.collapse ul li div.dropdown-menu {
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0.8;
+}
+    .collapse ul li div.dropdown-menu :hover {
+        background: rgba(0, 0, 0, 0.75);
+    }
