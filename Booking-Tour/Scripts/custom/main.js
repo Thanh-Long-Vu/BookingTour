@@ -305,23 +305,30 @@ $(document).ready(function () {
 	$('input[id="selection"]').on('keyup', function () {
 		if (this.value == 1) {
 			$('input[id="discount"]').val('50');
+			$('input[name="discount"]').val('50');
 		} else if (this.value == 2) {
 			$('input[id="discount"]').val('5');
+			$('input[name="discount"]').val('5');
 		} else if (this.value >= 3 && this.value <= 6) {
 			$('input[id="discount"]').val('10');
+			$('input[name="discount"]').val('10');
 		} else if (this.value >= 6) {
 			$('input[id="discount"]').val('20');
+			$('input[name="discount"]').val('20');
 		} else {
 			$('input[id="discount"]').val('0');
+			$('input[name="discount"]').val('0');
 		}
 		var unitPrice = $('input[id="unitPrice"]').val();
 		var numberPerson = $('input[id="selection"]').val();
-		var discountPrice = ($('input[id="discount"]').val() / 100) * unitPrice;
-		$('p[id="discountPrice"]').html(discountPrice + '$');
+		
 		$('p[id="numberPerson"]').html($('input[id="selection"]').val());
 
 		var totalPrice = unitPrice * numberPerson;
 		$('p[id="totalPrices"]').html(totalPrice + '$');
+
+		var discountPrice = ($('input[id="discount"]').val() / 100) * totalPrice;
+		$('p[id="discountPrice"]').html(discountPrice + '$');
 
 		var payment = totalPrice - discountPrice;
 		$('p[id="payment"]').html(payment + '$');

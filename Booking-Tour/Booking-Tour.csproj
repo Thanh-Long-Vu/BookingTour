@@ -160,6 +160,22 @@
     <Compile Include="Migrations\202011180916355_arlet_table_bills.designer.cs">
       <DependentUpon>202011180916355_arlet_table_bills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011200156137_add_column_discount_percent.cs" />
+    <Compile Include="Migrations\202011200156137_add_column_discount_percent.designer.cs">
+      <DependentUpon>202011200156137_add_column_discount_percent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011200228160_add_column_created_at_bills.cs" />
+    <Compile Include="Migrations\202011200228160_add_column_created_at_bills.designer.cs">
+      <DependentUpon>202011200228160_add_column_created_at_bills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011221136063_change_type_column.cs" />
+    <Compile Include="Migrations\202011221136063_change_type_column.designer.cs">
+      <DependentUpon>202011221136063_change_type_column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011221146148_change_type_column_aaaa.cs" />
+    <Compile Include="Migrations\202011221146148_change_type_column_aaaa.designer.cs">
+      <DependentUpon>202011221146148_change_type_column_aaaa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bills.cs" />
     <Compile Include="Models\ConnectDB_BookingTour.cs" />
@@ -435,6 +451,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
+    <Content Include="Views\Booking\ShowBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -463,6 +480,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011180916355_arlet_table_bills.resx">
       <DependentUpon>202011180916355_arlet_table_bills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011200156137_add_column_discount_percent.resx">
+      <DependentUpon>202011200156137_add_column_discount_percent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011200228160_add_column_created_at_bills.resx">
+      <DependentUpon>202011200228160_add_column_created_at_bills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011221136063_change_type_column.resx">
+      <DependentUpon>202011221136063_change_type_column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011221146148_change_type_column_aaaa.resx">
+      <DependentUpon>202011221146148_change_type_column_aaaa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

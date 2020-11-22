@@ -39,7 +39,49 @@ namespace Booking_Tour.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-            return Redirect("");
-        }    
+            var unitPrice = int.Parse(Request["unit_price"]);
+            var userId = int.Parse(Request["user_id"]);
+            var tourId = int.Parse(Request["tour_id"]);
+            var numberPerson = int.Parse(Request["person"]);
+            double discountPercent = int.Parse(Request["discount"]);
+
+            int totalPrice = unitPrice * numberPerson;
+            double discount = totalPrice * (discountPercent / 100);
+            var payments = totalPrice - discount;
+            Bills bills = new Bills();
+            bills.payments = payments;
+            bills.user_id = userId;
+            bills.tour_id = tourId;
+            bills.discount = discount;
+            bills.total_price = totalPrice;
+            bills.person = numberPerson;
+            bills.discount_percent = discountPercent;
+            bills.created_at = DateTime.Now;
+            db.Bills.Add(bills);
+            db.SaveChanges();
+
+            var detailBill = db.Bills.Where(b => b.user_id.Equals(userId)).ToList().LastOrDefault().id;
+            return RedirectToAction("ShowBill", new { id = detailBill });
+        }
+
+        public ActionResult ShowBill(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Bills bill = db.Bills.Find(id);
+            if (bill == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bill);
+        }
+
+        public ActionResult ListBill()
+        {
+            var bills = db.Bills.ToList();
+            return View(bills);
+        }
     }
 }

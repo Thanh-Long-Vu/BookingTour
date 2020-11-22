@@ -12,8 +12,10 @@
                     <div class="cart-title">
                         <h2>Checkout</h2>
                     </div>
-                    @using (Html.BeginForm("CreateBill", "Booking", FormMethod.Post))
+                    @using (Html.BeginForm("CreateBill", "Booking", FormMethod.Post, new { @id="formBill" }))
                     {
+                        <input type="hidden" name="unit_price" value="@ViewBag.Tour.price" />
+                        <input type="hidden" name="tour_id" value="@ViewBag.Tour.id" />
                         <div class="row">
                             <div class="col-5 mb-3">
                                 <img class="img-fluid" src="../../../Content/images/@ViewBag.Tour.avatar" alt="Alternate Text" />
@@ -47,13 +49,13 @@
                                 <label class="font-18"><b>Person:</b></label>
                                 <div class="d-flex">
                                     <div class="col-8 p-0">
-                                        <input type="number" id="selection" class="form-control" name="name" value="" placeholder="Number Person" required>
+                                        <input type="number" id="selection" class="form-control" name="person" value="" placeholder="Number Person" required>
                                     </div>
                                     <div class="input-group ml-3 col-4">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text">Discount</div>
+                                            <div class="input-group-text">Discount:</div>
                                         </div>
-                                        <input type="text" class="form-control h-100" id="discount" placeholder="Discount" disabled>
+                                        <input type="text" class="form-control h-100" value="" name="discount" id="discount" placeholder="Discount" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -84,6 +86,7 @@
                             <td>Discount:</td>
                             <td>
                                 <p id="discountPrice" class="p-0 m-0">0$</p>
+                                <input type="hidden" name="discount" value="" />
                             </td>
                         </tr>
                         <tr>
@@ -106,7 +109,7 @@
                         </tr>
                     </table>
                     <div class="cart-btn mt-5 text-center">
-                        <input type="submit" class="btn btn-checkout" value="Checkout">
+                        <input type="submit" class="btn btn-checkout" form="formBill" value="Checkout">
                     </div>
                 </div>
             </div>

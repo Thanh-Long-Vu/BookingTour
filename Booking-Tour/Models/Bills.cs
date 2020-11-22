@@ -12,11 +12,13 @@ namespace Booking_Tour.Models
         [Key]
         public int id { get; set; }
         [Required, Range(0, 10000000)]
-        public int payments { get; set; }
-        public int discount { get; set; }
+        public double payments { get; set; }
+        public double discount { get; set; }
+        public double discount_percent { get; set; }
         public int total_price { get; set; }
         public int person { get; set; }
         public bool status { get; set; }
+        public DateTime created_at { get; set; }
         public int user_id { get; set; }
         [ForeignKey("user_id")]
         public virtual Users Users { get; set; }
