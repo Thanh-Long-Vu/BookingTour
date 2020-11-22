@@ -33,13 +33,17 @@
                             <div class="collapse navbar-collapse text-light text-right" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item dropdown">
+                                        @{
+                                            var name = @Session["Name"].ToString();
+                                            var last_name = name.Split("".ToCharArray()).Last();
+                                        }
                                         <a class="mr-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            WelCome: @Session["Name"].ToString()
+                                            WelCome: @last_name
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                        </div>
+                                            <a class="dropdown-item" href="@Url.Action("SettingsAccount","Account",new { id = @Session["idUser"] })">Settings Account</a>
+                                            <a class="dropdown-item" href="@Url.Action("OrderMagement","Bill",new { id = @Session["idUser"] })">Order Management</a>
+</div>
                                     </li>
                                     <li>
                                         <a class="mr-3 ">
