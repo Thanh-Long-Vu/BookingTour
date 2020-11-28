@@ -19,7 +19,6 @@ namespace Booking_Tour.Models
         [Required]
         public int price { get; set; }
         public bool status { get; set; }
-        [MaxLength(255), Required]
         public string avatar { get; set; }
         public DateTime created_at { get; set; }
         public DateTime update_at { get; set; }
