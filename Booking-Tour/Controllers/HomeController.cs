@@ -7,6 +7,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Data;
+using System.Data.Entity;
+using PagedList;
 
 namespace Booking_Tour.Controllers
 {
@@ -50,7 +53,7 @@ namespace Booking_Tour.Controllers
             return View();
         }
 
-        public ActionResult Tours()
+        public ActionResult Tours(int? page)
         {
             ViewBag.ActiveTours = null;
             if (Request.CurrentExecutionFilePath == "/Home/Tours")
@@ -58,8 +61,11 @@ namespace Booking_Tour.Controllers
                 ViewBag.ActiveTours = "active";
             }
             ViewBag.Provinces = (from p in db.Provinces select p).ToList();
-            ViewBag.Tours = (from t in db.Tours select t).ToList();
-            return View();
+            var pagesize = 10;
+            var tours = db.Tours.Include(t => t.Provinces).ToList();
+            int pageNumber = page ?? 1;
+
+            return View(tours.ToPagedList(pageNumber, pagesize));
         }
 
         public ActionResult ShowTour(int? id)

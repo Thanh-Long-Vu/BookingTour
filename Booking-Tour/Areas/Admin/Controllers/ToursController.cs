@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Booking_Tour.Models;
+using PagedList;
 
 namespace Booking_Tour.Areas.Admin.Controllers
 {
@@ -15,10 +16,13 @@ namespace Booking_Tour.Areas.Admin.Controllers
         private ConnectDB_BookingTour db = new ConnectDB_BookingTour();
 
         // GET: Admin/Tours
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var tours = db.Tours.Include(t => t.Provinces);
-            return View(tours.ToList());
+            var pagesize = 10;
+            var tours = db.Tours.Include(t => t.Provinces).ToList();
+            int pageNumber = page ?? 1;
+
+            return View(tours.ToPagedList(pageNumber, pagesize));
         }
 
         // GET: Admin/Tours/Details/5
@@ -98,8 +102,18 @@ namespace Booking_Tour.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,day,description,price,status,avatar,created_at,update_at,provinces_id")] Tours tours)
+        public ActionResult Edit([Bind(Include = "id,name,day,description,price,status,avatar,created_at,update_at,provinces_id")] Tours tours, HttpPostedFileBase inputImg)
         {
+            if (inputImg != null)
+            {
+                string extensionName = System.IO.Path.GetExtension(inputImg.FileName);
+                //string fileName = DateTime.Now.Ticks.ToString();
+                string path = "Tour_Images/" + tours.id + extensionName;
+                string urlImg = System.IO.Path.Combine(Server.MapPath("~/Tour_Images/"), tours.id + extensionName);
+                inputImg.SaveAs(urlImg);
+                tours.avatar = path;
+            } 
+            tours.update_at = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Entry(tours).State = EntityState.Modified;

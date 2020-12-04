@@ -1,53 +1,57 @@
-﻿@model IEnumerable<Booking_Tour.Models.Tours>
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Booking_Tour.Models.Tours>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tours List";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<div class="d-flex align-items-center">
-    <h2 class="mx-5">Tours lits</h2>
+<div class="d-flex align-items-center col-12 flex-column">
+    <h2 class="mx-5"> =====<>><><> Tours List <><><>=====</h2>
     <a href="@Url.Action("Create", "Tours")" class="btn btn-info">Create Tour</a>
 </div>
 
-<table class="table table-hover table-dark">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Provinces Name</th>
-            <th scope="col">Tour Name</th>
-            <th scope="col">Tour Day</th>
-            <th scope="col">Prices</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+@foreach (var item in Model)
+{
+    <div class="row border d-flex align-items-center my-5">
+        <div class="col-4">
+            <img src="../../../@Html.DisplayFor(modelItem => item.avatar)" alt="Alternate Text" class="img-fluid" />
+        </div>
+        <table class="col-8 table table-hover table-bordered">
             <tr>
-                <td></td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Provinces.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.day)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.created_at)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                </td>
+                <th>Tour Name: </th>
+                <td colspan="2">@Html.DisplayFor(modelItem => item.name)</td>
             </tr>
-        }
-    </tbody>
-</table>
+            <tr>
+                <th>Price: </th>
+                <td colspan="2">@Html.DisplayFor(modelItem => item.price)</td>
+            </tr>
+            <tr>
+                <th>Days: </th>
+                <td colspan="2">@Html.DisplayFor(modelItem => item.day)</td>
+            </tr>
+            <tr>
+                <th>Created At: </th>
+                <td colspan="2">@Html.DisplayFor(modelItem => item.created_at)</td>
+            </tr>
+            <tr>
+                <th>Province: </th>
+                <td colspan="2">@Html.DisplayFor(modelItem => item.Provinces.name)</td>
+            </tr>
+            <tr>
+                <th>Region: </th>
+                <td colspan="2">@Html.DisplayFor(modelItem => item.Provinces.Regions.name)</td>
+            </tr>
+            <tr>
+                <th> @Html.ActionLink("Edit", "Edit", new { id = item.id })</th>
+                <th>@Html.ActionLink("Details", "Details", new { id = item.id })</th>
+                <th>@Html.ActionLink("Delete", "Delete", new { id = item.id })</th>
+            </tr>
+        </table>
+    </div>
+}
+<div class="col-12 text-center d-flex flex-column justify-content-center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page  => Url.Action("Index", "Tours", new { page }))
+</div>
+
