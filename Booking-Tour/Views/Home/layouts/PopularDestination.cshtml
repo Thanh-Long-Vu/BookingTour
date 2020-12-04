@@ -12,7 +12,7 @@
         @foreach (var tour in ViewBag.Tours)
         {
             <a href="@Url.Action("ShowTour", "Home", new { id = tour.id })" class="tour-entry animate-box m-3">
-                <div class="tour-img" style="background-image: url(../../../Content/images/@tour.avatar);">
+                <div class="tour-img" style="background-image: url(../../../@tour.avatar);">
                 </div>
                 <div class="desc">
                     <p class="star">

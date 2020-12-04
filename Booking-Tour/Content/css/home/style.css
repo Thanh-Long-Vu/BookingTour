@@ -3018,3 +3018,9 @@ input[type="text"] {
     .collapse ul li div.dropdown-menu :hover {
         background: rgba(0, 0, 0, 0.75);
     }
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
