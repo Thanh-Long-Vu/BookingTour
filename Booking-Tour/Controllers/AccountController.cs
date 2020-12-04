@@ -43,13 +43,13 @@ namespace Booking_Tour.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditAccount()
         {
-            var name = Request["name"];
+            /*var name = Request["name"];
             int userID = int.Parse(Session["idUser"].ToString());
             var user = db.Users.Where(u => u.id.Equals(userID)).FirstOrDefault();
 
             Users update = (from u in db.Users where u.id == userID).SingleOrDefault();
             update.name = name;
-            db.SaveChanges();
+            db.SaveChanges();*/
             return Content("Cap nhat thanh cong");
         }
     }
