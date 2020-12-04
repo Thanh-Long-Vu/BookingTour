@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -265,6 +265,8 @@
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\images\User\Avatar\img_avatar1.png" />
+    <Content Include="Content\images\User\Avatar\img_avatar2.png" />
     <Content Include="Content\main_style.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\regular.min.css" />
@@ -479,6 +481,12 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Booking\Booking.cshtml" />
     <Content Include="Views\Booking\ShowBill.cshtml" />
+    <Content Include="Views\Account\SettingsAccount.cshtml" />
+    <Content Include="Views\EditUser\Create.cshtml" />
+    <Content Include="Views\EditUser\Delete.cshtml" />
+    <Content Include="Views\EditUser\Details.cshtml" />
+    <Content Include="Views\EditUser\Edit.cshtml" />
+    <Content Include="Views\EditUser\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

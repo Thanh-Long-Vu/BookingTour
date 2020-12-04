@@ -1,6 +1,7 @@
 ﻿using Booking_Tour.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -30,7 +31,26 @@ namespace Booking_Tour.Controllers
         }
         public ActionResult SettingsAccount()
         {
+            if(Session["idUser"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var User = db.Users.Find(Session["idUser"]);
+            ViewBag.User = User;
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditAccount()
+        {
+            var name = Request["name"];
+            int userID = int.Parse(Session["idUser"].ToString());
+            var user = db.Users.Where(u => u.id.Equals(userID)).FirstOrDefault();
+
+            Users update = (from u in db.Users where u.id == userID).SingleOrDefault();
+            update.name = name;
+            db.SaveChanges();
+            return Content("Cap nhat thanh cong");
         }
     }
 }
