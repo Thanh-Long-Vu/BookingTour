@@ -3,63 +3,38 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="page-content">
-    <div class="form-v8-content">
-        <div class="form-left">
-            <img src="../../../Content/images/Login/form.jpg" alt="form" class="h-100">
-        </div>
-        <div class="form-right d-flex justify-content-center flex-column">
-            <div class="tab">
-                <div class="tab-inner">
-                    <button class="tablinks">REGISTER</button>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "signup" }))
+    {
+        @Html.AntiForgeryToken()
+        <img src="../../Content/images/login.png" alt="" class="signup-image">
+        <div class="signup-container">
+            <h1 class="signup-heading">Sign up</h1>
+            <div class="signup-form" autocomplete="off">
+                <div class="form-group w-100">
+                    <label for="name" class="form-label text-bold">Full name</label>
+                    @Html.TextBoxFor(m => m.name, new { @class = "form-input", @placeholder = "User Name" })
+                    @Html.ValidationMessageFor(m => m.name, "", new { @class = "text-danger text-bold" })
                 </div>
+                <div class="form-group w-100">
+                    <label for="email" class="form-label text-bold">Email</label>
+                    @Html.TextBoxFor(m => m.email, new { @class = "form-input ", @placeholder = "Example: johndoe@email.com" })
+                    @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger text-bold" })
+                    <label class="text-danger">@ViewBag.Error</label>
+                </div>
+                <div class="form-group w-100">
+                    <label for="password" class="form-label text-bold">Password</label>
+                    @Html.PasswordFor(m => m.password, new { @class = "form-input", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger text-bold" })
+                </div>
+                <div class="form-group w-100">
+                    <label for="re-password" class="form-label text-bold">Repeat password</label>
+                    @Html.PasswordFor(m => m.confirmPassword, new { @class = "form-input", @placeholder = "Repeat password" })
+                    @Html.ValidationMessageFor(m => m.confirmPassword, "", new { @class = "text-danger text-bold" })
+                </div>
+                <button type="submit" class="btn btn--gradient">Sign up</button>
             </div>
-            @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @class = "form-detail" }))
-            {
-                @Html.AntiForgeryToken()
-                <div class="tabcontent" id="sign-up">
-                    <div class="form-row">
-                        <div class="form-row-inner">
-                            @Html.LabelFor(m => m.name, "User Name")
-                            @Html.EditorFor(m => m.name, new { htmlAttributes = new { @class = "form-control", @placeholder = "User Name" } })
-                            <span class="border"></span>
-                            @Html.ValidationMessageFor(m => m.name, "User Name is required and not too 30 character.", new { @class = "badge badge-danger py-2 px-4 m-2" })
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-row-inner">
-                            @Html.LabelFor(m => m.email, "E-Mail")
-                            @Html.TextBoxFor(m => m.email, "", new { @class = "form-control", @placeholder = "Email" })
-                            @Html.ValidationMessageFor(m => m.email, "It's must be an email address", new { @class = "badge badge-danger py-2 px-4 m-2" })
-                            @if (ViewBag.error != null)
-                            {
-                                <span class="badge badge-danger">@ViewBag.error</span>
-                            }
-                            <span class="border"></span>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-row-inner">
-                            @Html.LabelFor(m => m.password, "Password")
-                            @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Password" })
-                            @Html.ValidationMessageFor(m => m.password, "Password is not valid", new { @class = "badge badge-danger py-2 px-4 m-2" })
-                            <span class="border"></span>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-row-inner">
-                            @Html.LabelFor(m => m.confirmPassword, "Confirm Password")
-                            @Html.PasswordFor(m => m.confirmPassword, new { @class = "form-control", @placeholder = "Confim Password" })
-                            @Html.ValidationMessageFor(m => m.confirmPassword, "Confirm Password does not macth with Password", new { @class = "badge badge-danger py-2 px-4 m-2" })
-                            <span class="border"></span>
-                        </div>
-                    </div>
-                    <div class="form-row-last text-center mt-3">
-                        <input type="submit" name="register" class="register" value="Register">
-                    </div>
-                </div>
-            }
         </div>
-    </div>
+    }
 </div>
+

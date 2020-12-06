@@ -248,6 +248,7 @@
     <Content Include="Content\images\img_bg_5.jpg" />
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\loc.png" />
+    <Content Include="Content\images\login.png" />
     <Content Include="Content\images\Login\form.jpg" />
     <Content Include="Content\images\person1.jpg" />
     <Content Include="Content\images\person2.jpg" />

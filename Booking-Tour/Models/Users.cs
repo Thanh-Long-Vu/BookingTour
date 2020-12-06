@@ -13,7 +13,7 @@ namespace Booking_Tour.Models
         public int id { get; set; }
         [Required, MaxLength(30)]
         public string name { get; set; }
-        [Required, EmailAddress]
+        [Required(ErrorMessage = "Please Enter your email"), EmailAddress]
         public string email { get; set; }
         [Required]
         public string password { get; set; }

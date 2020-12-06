@@ -4,39 +4,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="page-content">
-    <div class="form-v8-content">
-        <div class="form-left">
-            <img src="../../../Content/images/Login/form.jpg" alt="form" class="h-100">
-        </div>
-        <div class="form-right d-flex justify-content-center flex-column">
-            <div class="tab">
-                <div class="tab-inner">
-                    <button class="tablinks">Login</button>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "signup", @autocomplete = "off" }))
+    {
+        @Html.AntiForgeryToken()
+        <img src="../../Content/images/login.png" alt="" class="signup-image">
+        <div class="signup-container">
+            <h1 class="signup-heading">Sign In</h1>
+            <div class="signup-form">
+                <div class="form-group w-100">
+                    <label for="email" class="form-label text-bold">Email</label>
+                    @Html.TextBoxFor(m => m.email, new { @class = "form-input ", @placeholder = "Example: johndoe@email.com" })
+                    @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger text-bold" })
+                    <label class="text-danger">@ViewBag.Error</label>
                 </div>
+                <div class="form-group w-100">
+                    <label for="password" class="form-label text-bold">Password</label>
+                    @Html.PasswordFor(m => m.password, new { @class = "form-input", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger text-bold" })
+                </div>
+                <button type="submit" class="btn btn--gradient">Sign In</button>
             </div>
-            @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @class = "form-detail" }))
-            {
-                @Html.AntiForgeryToken()
-                <div class="tabcontent">
-                    <div class="form-row">
-                        <label class="form-row-inner">
-                            @Html.TextBoxFor(m => m.email, "", new { @class = "input-text" })
-                            <span class="label">E-Mail</span>
-                            <span class="border"></span>
-                        </label>
-                    </div>
-                    <div class="form-row">
-                        <label class="form-row-inner">
-                            @Html.PasswordFor(m => m.password, new { @class = "input-text" })
-                            <span class="label">Password</span>
-                            <span class="border"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row-last text-center">
-                    <input type="submit" name="login" class="register" value="Login">
-                </div>
-            }
         </div>
-    </div>
+    }
 </div>
