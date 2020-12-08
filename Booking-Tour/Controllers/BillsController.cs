@@ -1,4 +1,5 @@
-﻿using Booking_Tour.Models;
+﻿using Antlr.Runtime.Misc;
+using Booking_Tour.Models;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -24,11 +25,23 @@ namespace Booking_Tour.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-            var bill = db.Bills.ToList();
+            var id = int.Parse(Session["idUser"].ToString());
+            var bill = db.Bills.Where(b => b.user_id.Equals(id)).ToList();
             ViewBag.Bill = bill;
-            var pageSize = 1;
+            var pageSize = 2;
             int pageNumber = page ?? 1;
             return View(bill.ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult CancelBook(int? id)
+        {
+            Bills bills = db.Bills.Find(id);
+
+            if(bills.status == false)
+            {
+                bills.status = true;
+            }
+            db.SaveChanges();
+            return RedirectToAction("OrderMagement");
         }
     }
 }

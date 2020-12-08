@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
@@ -90,18 +91,48 @@ namespace Booking_Tour.Controllers
             ViewBag.User = User;
             return View();
         }
+        //Get Edit Account
+        public ActionResult EditAccount(int ? id)
+        {
+            if(Session["idUser"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }    
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Users users = db.Users.Find(id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+            return View(users);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditAccount()
+        public ActionResult EditAccount([Bind(Include = "id,name,email,password,avatar,role")] Users users)
         {
-            /*var name = Request["name"];
-            int userID = int.Parse(Session["idUser"].ToString());
-            var user = db.Users.Where(u => u.id.Equals(userID)).FirstOrDefault();
-
-            Users update = (from u in db.Users where u.id == userID).SingleOrDefault();
-            update.name = name;
-            db.SaveChanges();*/
-            return Content("Cap nhat thanh cong");
+            //if (inputImg != null)
+            //{
+            //    string extensionName = System.IO.Path.GetExtension(inputImg.FileName);
+            //    string path = "Avatar/" + users.id + extensionName;
+            //    string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/image/User/Avatar/"), users.id + extensionName);
+            //    inputImg.SaveAs(urlImg);
+            //    users.avatar = path;
+            //}
+            users.id = int.Parse(Session["idUser"].ToString());
+            if (ModelState.IsValid)
+            {
+                db.Entry(users).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("SettingsAccount");
+            }
+            return View(users);
+        }
+        public ActionResult UpdatePasswordUser()
+        {
+            return View();
         }
 
         public static string GetMD5(string str)

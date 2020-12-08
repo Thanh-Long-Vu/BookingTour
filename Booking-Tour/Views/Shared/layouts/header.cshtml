@@ -3,12 +3,12 @@
         <div class="container-fluid">
             <div class="row d-flex justify-content-between">
                 <div class="col-3">
-                    <div id="colorlib-logo">@Html.ActionLink("VietNam Travel","Index", "Home")</div>
+                    <div id="colorlib-logo">@Html.ActionLink("VietNam Travel", "Index", "Home")</div>
                 </div>
                 <div class="col-6 text-center menu-1">
                     <ul>
                         <li class="@ViewBag.ActiveHome">
-                            @Html.ActionLink("Home","Index", "Home")
+                            @Html.ActionLink("Home", "Index", "Home")
                         </li>
                         <li class="@ViewBag.ActiveTours">
                             @Html.ActionLink("Tours", "Tours", "Home")
@@ -24,9 +24,7 @@
                 <div class="col-3">
                     @if (Session["idUser"] != null)
                     {
-                    <nav class="navbar navbar-expand-lg navbar-light text-center menu-1">
-                        @*<ul class="text-light text-right">*@
-                            @*<li class="mr-3">WelCome: @Session["Name"].ToString()</li>*@
+                        <nav class="navbar navbar-expand-lg navbar-light text-center menu-1">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -43,7 +41,7 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="@Url.Action("SettingsAccount","Account",new { id = @Session["idUser"] })">Settings Account</a>
                                             <a class="dropdown-item" href="@Url.Action("OrderMagement","Bills",new { id = @Session["idUser"] })">Order Management</a>
-</div>
+                                        </div>
                                     </li>
                                     <li>
                                         <a class="mr-3 ">
@@ -52,8 +50,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        @*</ul>*@
-                    </nav>
+                        </nav>
                     }
                     else
                     {

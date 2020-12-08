@@ -1,101 +1,31 @@
-﻿
+﻿@model Booking_Tour.Models.Users
 @{
     ViewBag.Title = "SettingsAccount";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="cart-table-area my-100">
+<div class="cart-table-area my-100 col-12">
     <div class="container">
-        <div class="row">>
-            @using (Html.BeginForm("EditAccount", "Account", FormMethod.Post, new { @class = "col-9" }))
-            {
-                @Html.AntiForgeryToken()
-                <div class="col-12 col-lg-8">
-                    <div class="cart-title">
-                        <h2 style="text-align :center">Setting Account </h2>
-                    </div>
-                    <div>
-                        @if (ViewBag.message != null)
-                        {
-                            <h3>@ViewBag.message</h3>
-                        }
-                    </div>
-                    <div id="accordion">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h5 class="mb-0 text-center">
-                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne">
-                                        <i class="fas fa-angle-down">Name User : @ViewBag.User.name </i>
-                                    </button>
-                                </h5>
-                            </div>
-
-                            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" id="name" name="name" value="@ViewBag.User.name" placeholder="Enter Name Change" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0 text-center">
-                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <i class="fas fa-angle-down"> Email : @ViewBag.User.email </i>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="col-md-12 mb-3">
-                                        <input type="text" class="form-control" id="email" name="email" value="@ViewBag.User.email" vplaceholder="Enter Email Change" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0 text-center">
-                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <i class="fas fa-angle-down"> Password : ******** </i>
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body">
-                                    <form action="" method="post">
-                                        <div class="col-md-12 mb-3">
-                                            @*<input type="password" class="form-control" id="password_old" name="password_old" placeholder="Enter Email Old" />
-                                        <input type="password" class="form-control" id="password_new" name="password_new" placeholder="Enter Email New" />
-                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Email New" />*@
-                                            <input type="password" class="form-control" id="password" name="password" />
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            @if (@ViewBag.User.role == false)
-                            {
-                                <input style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" type="text" id="Role" name="Role" value="Role of User" disabled />
-                            }
-                            else
-                            {
-                                <input style="text-align:center;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" type="text" id="Role" name="Role" value="Role of Admin" disabled />}
-                            }                        
-                        </div>
-                    </div>
-                    <div class="col-12  mt-3  text-center">
-                        <input type="submit" class="btn btn-primary" id="UpdateInformation" name="UpdateInformation" value="Update" />
-                    </div>
+        <div class="row">
+            <div class="wrapper bg-white mt-sm-5 col-12">
+                <h4 class="pb-4 border-bottom">Account settings</h4>
+                <div class="d-flex align-items-start py-3 border-bottom">
+                    @if (ViewBag.User.avatar == null)
+                    {
+                        <p style="color:red; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Vui lòng cập nhật ảnh </p>
+                    }
+                    else
+                    {
+                        <img src="@ViewBag.User.avatar" class="img" alt="">
+                    }
                 </div>
-            }
-            <div class="col-3 ">
-                <div id="accordion">
-                    <div class="card">
-                        <img src="~/Content/images/User/Avatar/img_avatar1.png" style="margin: 0 auto;width : 300px;height :300px " />
-                        <input type="file" class="" id="Avatar" name="Avatar" />
-                        <input type="submit" class="btn btn-primary" id="UpdateAvatar" name="UpdateAvatar" value="Update" />
+                <div class="py-2">
+                    <div class="row py-2">
+                        <div class="col-md-6"> <label for="firstname">Full Name</label> <input type="text" class="bg-light form-control" value="@ViewBag.User.name" disabled> </div>
+                        <div class="col-md-6"> <label for="email">Email Address</label> <input type="email" class="bg-light form-control" value="@ViewBag.User.email" disabled> </div>
+                    </div>
+                    <div class="py-3 pb-4 border-bottom">
+                        <a href="@Url.Action("EditAccount","Account",new {id = ViewBag.User.id })" class="btn btn-primary mr-3">Edit User Information </a>
+                        <a href="@Url.Action("UpdatePasswordUser","Account",new { id = ViewBag.User.id})" class="btn btn-primary mr-3">Edit User Password </a>
                     </div>
                 </div>
             </div>

@@ -80,15 +80,24 @@
                         </tr>
                     </table>
                 </div>
-                <div class="cart-btn mt-5 text-center col-12">
-                    <input type="submit" class="btn btn-cancelBooking" form="formBill" value="Cancel Booking">
-                </div>
+                @if (bills.status == false)
+                {
+                    <div class="btn btn-cancelBooking mt-5 text-center col-12 mb-20">
+                        <a href="@Url.Action("CancelBook","Bills",new { id = bills.id })" onclick="return confirm('Do you want cancel bill ?')">Cancel Booking</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="cart-btn mt-5 text-center col-12 mb-20 button-success">
+                        <input type="submit" class="btn btn-canceled" form="formBill" value="Canceled">
+                    </div>
+                }
             </div>
         }
     </div>
     <div class="text-center">
         Page @(Model.PageCount < Model.PageNumber ? 0 :Model.PageNumber)
-        @Html.PagedListPager(Model, page =>Url.Action("OrderMagement","Bills",new { page }))
+        @Html.PagedListPager(Model, page => Url.Action("OrderMagement", "Bills", new { page }))
     </div>
 </div>
 
