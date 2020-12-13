@@ -9,6 +9,7 @@ namespace Booking_Tour.Models
 {
     public class Users
     {
+
         [Key]
         public int id { get; set; }
         [Required, MaxLength(30)]
@@ -18,8 +19,7 @@ namespace Booking_Tour.Models
         [Required]
         public string password { get; set; }
         [NotMapped]
-        [Required]
-        [System.ComponentModel.DataAnnotations.Compare("password")]
+        [Compare("password")]
         public string confirmPassword { get; set; }
         [MaxLength(255)]
         public string avatar { get; set; }
