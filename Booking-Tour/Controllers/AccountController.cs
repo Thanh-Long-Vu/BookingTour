@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -81,55 +82,40 @@ namespace Booking_Tour.Controllers
             Session.Abandon();//remove session
             return RedirectToAction("Login");
         }
-        public ActionResult SettingsAccount()
+        public ActionResult Profiles()
         {
             if(Session["idUser"] == null)
             {
                 return RedirectToAction("Login", "Account");
             }
-            var User = db.Users.Find(Session["idUser"]);
-            ViewBag.User = User;
-            return View();
+            Users user = db.Users.Find(Session["idUser"]);
+            return View(user);
         }
         //Get Edit Account
-        public ActionResult EditAccount(int ? id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Profiles(Users details)
         {
             if(Session["idUser"] == null)
             {
                 return RedirectToAction("Login", "Account");
-            }    
-            if(id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Users users = db.Users.Find(id);
-            if (users == null)
+
+            var user = db.Users.Find(Session["idUser"]);
+            try
             {
-                return HttpNotFound();
-            }
-            return View(users);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditAccount([Bind(Include = "id,name,email,password,avatar,role")] Users users)
-        {
-            //if (inputImg != null)
-            //{
-            //    string extensionName = System.IO.Path.GetExtension(inputImg.FileName);
-            //    string path = "Avatar/" + users.id + extensionName;
-            //    string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/image/User/Avatar/"), users.id + extensionName);
-            //    inputImg.SaveAs(urlImg);
-            //    users.avatar = path;
-            //}
-            users.id = int.Parse(Session["idUser"].ToString());
-            if (ModelState.IsValid)
-            {
-                db.Entry(users).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("SettingsAccount");
+                return View(user);
             }
-            return View(users);
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return View(user);
+
         }
+        
         public ActionResult UpdatePasswordUser()
         {
             return View();
