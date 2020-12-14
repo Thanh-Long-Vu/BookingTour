@@ -83,5 +83,11 @@ namespace Booking_Tour.Controllers
             var bills = db.Bills.ToList();
             return View(bills);
         }
+        public ActionResult SearchTour()
+        {
+            Regions regions = db.Regions.FirstOrDefault();
+            ViewBag.Region = regions;
+            return View();
+        }
     }
 }

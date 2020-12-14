@@ -80,6 +80,7 @@ namespace Booking_Tour.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,name,email,password,avatar,role")] Users users)
         {
+            ModelState.Clear();
             if (ModelState.IsValid)
             {
                 db.Entry(users).State = EntityState.Modified;
