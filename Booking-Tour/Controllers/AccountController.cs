@@ -91,6 +91,7 @@ namespace Booking_Tour.Controllers
             Users user = db.Users.Find(Session["idUser"]);
             return View(user);
         }
+
         //Get Edit Account
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -100,16 +101,22 @@ namespace Booking_Tour.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
+            ModelState.Remove("password");
+            ModelState.Remove("confirmPassword");
 
             var user = db.Users.Find(Session["idUser"]);
-            try
+
+            if (ModelState.IsValid)
             {
+
+                //Không có dòng này không update được :V
+                db.Configuration.ValidateOnSaveEnabled = false;
+
+                //Các giá trị cần update ở đây
+                user.name = details.name;
                 db.SaveChanges();
-                return View(user);
-            }
-            catch (DbEntityValidationException e)
-            {
-                Console.WriteLine(e);
+
+                return RedirectToAction("Profiles");
             }
 
             return View(user);
