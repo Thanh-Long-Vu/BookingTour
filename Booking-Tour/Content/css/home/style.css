@@ -3337,3 +3337,62 @@ select {
     font-size: 25px;
     font-weight: bold;
 }
+
+.update-img {
+    cursor: pointer;
+}
+
+.update-img:hover {
+    color: #ffdd00;
+}
+
+.input-file {
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.input-label {
+    border-radius: 8px;
+    border: 2px dotted gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.input-file input[type="file"] {
+    display: none;
+}
+
+.input-file .icon-upload {
+    color: #ccc;
+    font-size: 3rem;
+    pointer-events: none;
+}
+
+.input-label i {
+    font-size: 50px;
+}
+
+.user-update-img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.user-update-img img {
+    width: 100%;
+    border-radius: 50%;
+}
+

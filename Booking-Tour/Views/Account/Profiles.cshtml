@@ -9,7 +9,7 @@
         <div class="col-3">
             <div class="profile-user-img">
                 <img src="~/Content/images/User/@Html.DisplayFor(model => model.avatar)" alt="Alternate Text" class="img-fluid" />
-                <i class="fas fa-camera-retro"></i>
+                <i class="fas fa-camera-retro update-img" data-toggle="modal" data-target="#myModal"></i>
                 <p class="m-0"><b>@Html.DisplayFor(model => model.name)</b></p>
                 <p class="m-0">@Html.DisplayTextFor(model => model.email)</p>
 
@@ -35,13 +35,45 @@
                     <label for="userName">User Name</label>
                     @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @id = "userName" } })
                 </div>
-                <div class="form-group">
-                    <label for="avatar">Avatar</label>
-                    <input type="file" name="inputAvatar" id="avatar">
-                    @Html.ValidationMessageFor(model => model.avatar, "", new { @class = "text-danger" })
-                </div>
+                <input type="file" name="inputAvatar" id="imgInp" />
                 <input class="btn btn-info" type="submit" value="Update" />
             }
         </div>
     </div>
 </section>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Update Avatar</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="input-file">
+                        <input type="file" name="inputAvatar" id="imgInp" />
+                        <label for="imgInp" class="input-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </label>
+                    </div>
+                    <div class="user-update-img">
+                        <img id="blah" src="#" alt="your image" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="submit" form="upload" class="btn btn-success">Upload</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

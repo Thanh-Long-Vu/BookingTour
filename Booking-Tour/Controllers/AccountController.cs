@@ -101,35 +101,34 @@ namespace Booking_Tour.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-            if (inputAvatar != null)
-            {
-                string extensionName = System.IO.Path.GetExtension(inputAvatar.FileName);
-                string path = "Avatar/" + details.id + extensionName;
-                string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/User/Avatar/"), details.id + extensionName);
-                inputAvatar.SaveAs(urlImg);
-                details.avatar = path;
-            }
+           
             ModelState.Remove("password");
             ModelState.Remove("confirmPassword");
 
             var user = db.Users.Find(Session["idUser"]);
+
             if (ModelState.IsValid)
             {
+                if (inputAvatar != null)
+                {
+                    string extensionName = System.IO.Path.GetExtension(inputAvatar.FileName);
+                    string path = "Avatar/" + user.id + extensionName;
+                    string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/User/Avatar/"), user.id + extensionName);
+                    inputAvatar.SaveAs(urlImg);
+                    user.avatar = path;
+                }
 
                 //Không có dòng này không update được :V
                 db.Configuration.ValidateOnSaveEnabled = false;
                 //Các giá trị cần update ở đây
-                user.avatar = details.avatar;
                 user.name = details.name;
                 db.SaveChanges();
 
                 return RedirectToAction("Profiles");
             }
-
             return View(user);
-
         }
-        
+
         public ActionResult UpdatePasswordUser()
         {
             return View();
