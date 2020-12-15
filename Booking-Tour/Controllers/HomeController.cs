@@ -79,7 +79,9 @@ namespace Booking_Tour.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Tour = tour;
+            //var DescriptionTour = db.DescriptionTours.Where(d => d.tour_id.Equals(tour.id)).ToList();
+            //ViewBag.DescriptionTour = DescriptionTour;
+            ViewBag.tour = tour;
             return View();
         }
         /*Start Login */

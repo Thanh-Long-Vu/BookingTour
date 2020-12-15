@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Booking_Tour.Models;
+using PagedList;
 
 namespace Booking_Tour.Areas.Admin.Controllers
 {
@@ -15,10 +16,12 @@ namespace Booking_Tour.Areas.Admin.Controllers
         private ConnectDB_BookingTour db = new ConnectDB_BookingTour();
 
         // GET: Admin/DescriptionTours
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var descriptionTours = db.DescriptionTours.Include(d => d.Tours);
-            return View(descriptionTours.ToList());
+            var pagesize = 10;
+            var descriptionTours = db.DescriptionTours.Include(d => d.Tours).ToList();
+            int pageNumber = page ?? 1;
+            return View(descriptionTours.ToPagedList(pageNumber, pagesize));
         }
 
         // GET: Admin/DescriptionTours/Details/5
@@ -48,10 +51,19 @@ namespace Booking_Tour.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,avatar,day_tour,description,tour_id")] DescriptionTour descriptionTour)
+        public ActionResult Create([Bind(Include = "id,avatar,day_tour,description,tour_id")] DescriptionTour descriptionTour, HttpPostedFileBase CreateAvatar)
         {
             if (ModelState.IsValid)
             {
+                if (CreateAvatar != null)
+                {
+                    string extensionName = System.IO.Path.GetExtension(CreateAvatar.FileName);
+                    string fileName = DateTime.Now.Ticks.ToString();
+                    string path = "DescreptionTour/" + descriptionTour.id + extensionName;
+                    string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/DescreptionTour/"), descriptionTour.id + extensionName);
+                    CreateAvatar.SaveAs(urlImg);
+                    descriptionTour.avatar = path;
+                }
                 db.DescriptionTours.Add(descriptionTour);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,21 +94,21 @@ namespace Booking_Tour.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,avatar,day_tour,description,tour_id")] DescriptionTour descriptionTour, HttpPostedFileBase inputAvatar)
+        public ActionResult Edit([Bind(Include = "id,avatar,day_tour,description,tour_id")] DescriptionTour descriptionTour, HttpPostedFileBase editAvatar)
         {
 
-            if (inputAvatar != null)
+            if (editAvatar != null)
             {
-                string extensionName = System.IO.Path.GetExtension(inputAvatar.FileName);
+                string extensionName = System.IO.Path.GetExtension(editAvatar.FileName);
                 string fileName = DateTime.Now.Ticks.ToString();
                 string path = "DescreptionTour/" + descriptionTour.id + extensionName;
                 string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/DescreptionTour/"), descriptionTour.id + extensionName);
-                inputAvatar.SaveAs(urlImg);
+                editAvatar.SaveAs(urlImg);
                 descriptionTour.avatar = path;
             }
             if (ModelState.IsValid)
             {
-                db.DescriptionTours.Add(descriptionTour);
+                db.Entry(descriptionTour).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -35,7 +35,9 @@
                     <label for="userName">User Name</label>
                     @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @id = "userName" } })
                 </div>
-                <input type="file" name="inputAvatar" id="imgInp" />
+                <div class="form-group">
+                    <input type="file" name="inputAvatar" id="imgInp" />
+                </div>
                 <input class="btn btn-info" type="submit" value="Update" />
             }
         </div>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Booking_Tour.Models.DescriptionTour>
+@{
     ViewBag.Title = "ShowTour";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -28,112 +29,27 @@
             <div class="col-12">
                 <div class="wrap-division">
                     <div class="col-md-12 col-md-offset-0 heading2 animate-box">
-                        <h2>@ViewBag.Tour.name</h2>
+                        <h2></h2>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 animate-box">
-                            <div class="room-wrap">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="room-img" style="background-image: url(../../Content/images/tour-1.jpg);"></div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="desc">
-                                            <span class="day-tour">Day 1</span>
-                                            <h2>Athens, Greece</h2>
-                                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                            <div class="col-md-12 animate-box">
+                                <div class="room-wrap">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="room-img" style="background-image: url(../../Content/images/tour-1.jpg);"></div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="desc">
+                                                <span class="day-tour">Day</span>
+                                                <h2>Athens, Greece</h2>
+                                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-12 animate-box">
-                            <div class="room-wrap">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="room-img" style="background-image: url(../../Content/images/tour-2.jpg);"></div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="desc">
-                                            <span class="day-tour">Day 2</span>
-                                            <h2>Thailand</h2>
-                                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 animate-box">
-                            <div class="room-wrap">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="room-img" style="background-image: url(../../Content/images/tour-3.jpg);"></div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="desc">
-                                            <span class="day-tour">Day 3</span>
-                                            <h2>Boracay, Philippines</h2>
-                                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 animate-box">
-                            <div class="room-wrap">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="room-img" style="background-image: url(../../Content/images/tour-4.jpg);"></div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="desc">
-                                            <span class="day-tour">Day 4</span>
-                                            <h2>Tokyo, Japan</h2>
-                                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 animate-box">
-                            <div class="room-wrap">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="room-img" style="background-image: url(../../Content/images/tour-5.jpg);"></div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="desc">
-                                            <span class="day-tour">Day 5</span>
-                                            <h2>Paris, Italy</h2>
-                                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 animate-box">
-                            <div class="room-wrap">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="room-img" style="background-image: url(../../Content/images/tour-6.jpg);"></div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="desc">
-                                            <span class="day-tour">Day 6</span>
-                                            <h2>Greece</h2>
-                                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-12 animate-box text-center">
-                            <p><a href="@Url.Action("Booking", "Booking", new { id = ViewBag.Tour.id })" class="btn btn-primary">Book Now!</a></p>
+                            @*<p><a href="@Url.Action("Booking", "Booking", new { id = ViewBag.Tour.id })" class="btn btn-primary">Book Now!</a></p>*@
                         </div>
                     </div>
                 </div>
