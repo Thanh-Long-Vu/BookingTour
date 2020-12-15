@@ -43,9 +43,9 @@
                 <td colspan="2">@Html.DisplayFor(modelItem => item.Provinces.Regions.name)</td>
             </tr>
             <tr>
-                <th> @Html.ActionLink("Edit", "Edit", new { id = item.id })</th>
-                <th>@Html.ActionLink("Details", "Details", new { id = item.id })</th>
-                <th>@Html.ActionLink("Delete", "Delete", new { id = item.id })</th>
+                <th> @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @style = "color :red;" })</th>
+                <th>@Html.ActionLink("Details", "Details", new { id = item.id }, new { @style = "color :red;" })</th>
+                <th>@Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @style = "color :red;" })</th>
             </tr>
         </table>
     </div>

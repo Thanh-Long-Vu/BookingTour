@@ -55,8 +55,6 @@ namespace Booking_Tour.Areas.Admin.Controllers
                 var check = db.Users.FirstOrDefault(u => u.email == users.email);
                 if(check == null)
                 {
-                    users.password = GetMD5(users.password);
-                    db.Configuration.ValidateOnSaveEnabled = false;
                     db.Users.Add(users);
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -70,19 +68,6 @@ namespace Booking_Tour.Areas.Admin.Controllers
 
             return View(users);
         }
-        public static string GetMD5(string str)
-        {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] fromData = Encoding.UTF8.GetBytes(str);
-            byte[] targetData = md5.ComputeHash(fromData);
-            string byte2String = null;
-            for (int i = 0; i < targetData.Length; i++)
-            {
-                byte2String += targetData[i].ToString("x2");
-            }
-            return byte2String;
-        }
-
         // GET: Admin/Users/Edit/5
         public ActionResult Edit(int? id)
         {

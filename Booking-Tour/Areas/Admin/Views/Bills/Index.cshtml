@@ -107,9 +107,9 @@
                 @Html.DisplayFor(modelItem => item.created_at)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @style = "color :red;" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @style = "color :red;" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @style = "color :red;" })
             </td>
         </tr>
     }

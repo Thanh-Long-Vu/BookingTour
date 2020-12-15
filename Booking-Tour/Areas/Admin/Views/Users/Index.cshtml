@@ -25,8 +25,8 @@
             </tr>
             <tr>
                 <th>Email: </th>
-                <td colspan="2">
-                    @Html.DisplayFor(modelItem => item.email)
+                <td colspan="2" >
+                    <b >@Html.DisplayFor(modelItem => item.email)</b>
                 </td>
             </tr>
             <tr>
@@ -48,9 +48,9 @@
                 </td>
             </tr>
             <tr>
-                <th>@Html.ActionLink("Edit", "Edit", new { id = item.id })</th>
-                <th>@Html.ActionLink("Details", "Details", new { id = item.id })</th>
-                <th>@Html.ActionLink("Delete", "Delete", new { id = item.id })</th>
+                <th>@Html.ActionLink("Edit", "Edit", new { id = item.id },new { @style = "color :red;"})</th>
+                <th>@Html.ActionLink("Details", "Details", new { id = item.id },new { @style = "color :red;" })</th>
+                <th>@Html.ActionLink("Delete", "Delete", new { id = item.id },new { @style = "color :red;" })</th>
             </tr>
         </table>
     </div>

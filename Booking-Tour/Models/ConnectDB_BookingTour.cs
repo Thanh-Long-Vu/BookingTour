@@ -14,6 +14,7 @@ namespace Booking_Tour.Models
         public virtual DbSet<Tours> Tours { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Bills> Bills { get; set; }
+        public virtual DbSet<DescriptionTour> DescriptionTours { get; set; }
         public ConnectDB_BookingTour()
             : base("name=ConnectDB_BookingTour")
         {

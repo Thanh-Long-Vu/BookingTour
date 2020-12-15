@@ -142,7 +142,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BillsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\DemoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DescriptionToursController.cs" />
     <Compile Include="Areas\Admin\Controllers\ToursController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -192,9 +192,14 @@
     <Compile Include="Migrations\202011280937464_update_table_tours.designer.cs">
       <DependentUpon>202011280937464_update_table_tours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012151421483_Descreption Tour.cs" />
+    <Compile Include="Migrations\202012151421483_Descreption Tour.designer.cs">
+      <DependentUpon>202012151421483_Descreption Tour.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bills.cs" />
     <Compile Include="Models\ConnectDB_BookingTour.cs" />
+    <Compile Include="Models\DescriptionTour.cs" />
     <Compile Include="Models\Provinces.cs" />
     <Compile Include="Models\Regions.cs" />
     <Compile Include="Models\Tours.cs" />
@@ -359,6 +364,11 @@
     <Content Include="Areas\Admin\Views\Users\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DescriptionTours\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DescriptionTours\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DescriptionTours\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DescriptionTours\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DescriptionTours\Index.cshtml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -509,6 +519,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Content\images\DescreptionTour\" />
     <Folder Include="Tour_Images\" />
   </ItemGroup>
   <ItemGroup>
@@ -550,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011280937464_update_table_tours.resx">
       <DependentUpon>202011280937464_update_table_tours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012151421483_Descreption Tour.resx">
+      <DependentUpon>202012151421483_Descreption Tour.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
