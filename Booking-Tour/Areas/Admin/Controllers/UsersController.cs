@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Booking_Tour.Models;
@@ -50,12 +52,35 @@ namespace Booking_Tour.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(users);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var check = db.Users.FirstOrDefault(u => u.email == users.email);
+                if(check == null)
+                {
+                    users.password = GetMD5(users.password);
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.Users.Add(users);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Error = "Email has been taken";
+                    return View();
+                }                    
             }
 
             return View(users);
+        }
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] fromData = Encoding.UTF8.GetBytes(str);
+            byte[] targetData = md5.ComputeHash(fromData);
+            string byte2String = null;
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                byte2String += targetData[i].ToString("x2");
+            }
+            return byte2String;
         }
 
         // GET: Admin/Users/Edit/5
@@ -83,7 +108,10 @@ namespace Booking_Tour.Areas.Admin.Controllers
             ModelState.Clear();
             if (ModelState.IsValid)
             {
+
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.Entry(users).State = EntityState.Modified;
+                users.name = users.name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

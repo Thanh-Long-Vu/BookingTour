@@ -7,10 +7,10 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Users</h4>
         <hr />
@@ -32,31 +32,28 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            @Html.LabelFor(model => model.password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                @Html.PasswordFor(m => m.confirmPassword, new { @class = "form-input", @placeholder = "password" })
+                @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger text-bold" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.confirmPassword, "Repeat password", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.confirmPassword, new { @class = "form-input", @placeholder = "Repeat password" })
+                @Html.ValidationMessageFor(m => m.confirmPassword, "", new { @class = "text-danger text-bold" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.avatar, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.avatar, "Avatar", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.avatar, new { htmlAttributes = new { @class = "form-control" } })
+                <input type="file" name="input_image" id="avatar" />
                 @Html.ValidationMessageFor(model => model.avatar, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.role, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.role)
-                    @Html.ValidationMessageFor(model => model.role, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

@@ -270,6 +270,11 @@
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
     <Content Include="Content\css\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\images\User\Avatar\0.jpg" />
+    <Content Include="Content\images\User\Avatar\0.png" />
+    <Content Include="Content\images\User\Avatar\1.png" />
+    <Content Include="Content\images\User\Avatar\2.png" />
+    <Content Include="Content\images\User\Avatar\3.png" />
     <Content Include="Content\images\User\default-profile.jpg" />
     <Content Include="Content\main_style.css" />
     <Content Include="Content\PagedList.css" />

@@ -95,24 +95,31 @@ namespace Booking_Tour.Controllers
         //Get Edit Account
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Profiles(Users details)
+        public ActionResult Profiles(Users details, HttpPostedFileBase inputAvatar)
         {
-            if(Session["idUser"] == null)
+            if (Session["idUser"] == null)
             {
                 return RedirectToAction("Login", "Account");
+            }
+            if (inputAvatar != null)
+            {
+                string extensionName = System.IO.Path.GetExtension(inputAvatar.FileName);
+                string path = "Avatar/" + details.id + extensionName;
+                string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/User/Avatar/"), details.id + extensionName);
+                inputAvatar.SaveAs(urlImg);
+                details.avatar = path;
             }
             ModelState.Remove("password");
             ModelState.Remove("confirmPassword");
 
             var user = db.Users.Find(Session["idUser"]);
-
             if (ModelState.IsValid)
             {
 
                 //Không có dòng này không update được :V
                 db.Configuration.ValidateOnSaveEnabled = false;
-
                 //Các giá trị cần update ở đây
+                user.avatar = details.avatar;
                 user.name = details.name;
                 db.SaveChanges();
 
