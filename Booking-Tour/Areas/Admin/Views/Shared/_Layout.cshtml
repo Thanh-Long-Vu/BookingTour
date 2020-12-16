@@ -30,6 +30,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+                @if (Session["idUser"] != null)
+                {
+                    if(Session["Role"] == "admin")
+                    {
+                        <h4>Welcome Admin</h4>
+                    }
+                    <a href="@Url.Action("Logout","Account")">Logout</a>
+                }
             </nav>
         </header>
         <aside class="main-sidebar">
@@ -46,7 +54,6 @@
                         <ul class="treeview-menu">
                             <li><a href="@Url.Action("Index","Tours")"><i class="fas fa-list-ol"></i>  List</a></li>
                             <li><a href="@Url.Action("Create", "Tours")"><i class="fas fa-plus"></i> Create</a></li>
-                            <li><a href="@Url.Action("Index", "DescriptionTours")"><i class="fas fa-list-ol"></i> List Description Tour</a></li>
                             <li><a href="@Url.Action("Create", "DescriptionTours")"><i class="fas fa-plus"></i> Create Description Tour</a></li>
                         </ul>
                     </li>

@@ -29,12 +29,21 @@ namespace Booking_Tour.Controllers
             if (ModelState.IsValid)
             {
                 var f_password = GetMD5(password);
-                var data = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(f_password)).ToList();
-                if (data.Count() > 0)
+                var data = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(f_password)).FirstOrDefault();
+                if (data != null)
                 {
                     //add session
-                    Session["Name"] = data.FirstOrDefault().name;
-                    Session["idUser"] = data.FirstOrDefault().id;
+                    Session["Name"] = data.name;
+                    Session["idUser"] = data.id;
+                    
+
+                    if (data.role == true)
+                    {
+                        Session["Role"] = "admin";
+                        return RedirectToAction("Index", "Bills", new { Area = "Admin" });
+                    }
+                    Session["Role"] = "user";
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

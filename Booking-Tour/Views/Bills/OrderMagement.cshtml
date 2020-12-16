@@ -8,12 +8,14 @@
 
 <div class="cart-table-area my-100">
     <div class="container">
+        @{int stt = 1;}
         @foreach (var bills in Model)
         {
-            <h1>Đơn hàng số @bills.id</h1>
+            <h1>Đơn hàng số @stt</h1>
+            stt++;
             <div class="row">
                 <div class="col-5 mb-3">
-                    <img class="img-fluid" src="../../../Content/images/@bills.Tours.avatar" alt="Alternate Text" />
+                    <img class="img-fluid" src="~/@bills.Tours.avatar" alt="Alternate Text" />
                 </div>
                 <div class="col-7">
                     <table class="table table-hover h-100">

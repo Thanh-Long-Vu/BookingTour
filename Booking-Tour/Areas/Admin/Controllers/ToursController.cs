@@ -37,6 +37,9 @@ namespace Booking_Tour.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            var DescriptionTour = db.DescriptionTours.Where(m => m.tour_id == id);
+            ViewBag.DescriptionTour = DescriptionTour.ToList();
+
             return View(tours);
         }
 

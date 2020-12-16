@@ -7,85 +7,117 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Tours</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Provinces.name)
-        </dt>
+<div class="row">
+    @*<div class="col-4">
+        <h4>Tours</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Provinces.name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Provinces.name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Provinces.name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.day)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.day)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.day)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.day)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.description)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.price)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.price)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.price)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.status)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.status)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.avatar)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.avatar)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.avatar)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.avatar)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.created_at)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.created_at)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.created_at)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.created_at)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.update_at)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.update_at)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.update_at)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.update_at)
+            </dd>
 
-    </dl>
+        </dl>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>*@
+    <div class="col-8">
+        @foreach (var item in ViewBag.DescriptionTour)
+        {
+            <div class="row border d-flex align-items-center my-5">
+                <div class="col-4">
+                    <img src="~/Content/images/@item.avatar" alt="Alternate Text" class="img-fluid" />
+                </div>
+                <table class="col-8 table table-hover table-bordered">
+                    <tr>
+                        <th>Day Tour: </th>
+                        <td colspan="2">@item.day_tour</td>
+                    </tr>
+                    <tr>
+                        <th>Days: </th>
+                        <td colspan="2">
+                            @item.description
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><a href="@Url.Action("Edit", "DescriptionTours", new { id = item.id })">Edit</a></th>
+                        <th><a href="@Url.Action("Details)","DescriptionTours", new { id = item.id })">Details</a></th>
+                        <th>
+                            <a href="@Url.Action("Delete", "DescriptionTours", new { id = item.id })">Delete</a>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        }
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
