@@ -59,8 +59,8 @@ namespace Booking_Tour.Areas.Admin.Controllers
                 {
                     string extensionName = System.IO.Path.GetExtension(CreateAvatar.FileName);
                     string fileName = DateTime.Now.Ticks.ToString();
-                    string path = "DescreptionTour/" + descriptionTour.id + extensionName;
-                    string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/DescreptionTour/"), descriptionTour.id + extensionName);
+                    string path = "Content/images/DescreptionTour/" + fileName + extensionName;
+                    string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/DescreptionTour/"), fileName + extensionName);
                     CreateAvatar.SaveAs(urlImg);
                     descriptionTour.avatar = path;
                 }
@@ -94,14 +94,18 @@ namespace Booking_Tour.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,avatar,day_tour,description,tour_id")] DescriptionTour descriptionTour, HttpPostedFileBase editAvatar)
+        public ActionResult Edit([Bind(Include = "id,avatar,day_tour,description,tour_id")] DescriptionTour descriptionTour, HttpPostedFileBase editAvatar, string OldImg)
         {
 
             if (editAvatar != null)
             {
                 string extensionName = System.IO.Path.GetExtension(editAvatar.FileName);
-                string fileName = DateTime.Now.Ticks.ToString();
-                string path = "DescreptionTour/" + descriptionTour.id + extensionName;
+                string fullPath = Request.MapPath("~/" + OldImg);
+                if (System.IO.File.Exists(fullPath))
+                {
+                    System.IO.File.Delete(fullPath);
+                }
+                string path = "Content/images/DescreptionTour/" + descriptionTour.id + extensionName;
                 string urlImg = System.IO.Path.Combine(Server.MapPath("~/Content/images/DescreptionTour/"), descriptionTour.id + extensionName);
                 editAvatar.SaveAs(urlImg);
                 descriptionTour.avatar = path;

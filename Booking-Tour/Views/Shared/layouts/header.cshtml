@@ -2,19 +2,16 @@
     <div class="top-menu">
         <div class="container-fluid">
             <div class="row d-flex justify-content-between">
-                <div class="col-3">
+                <div class="col-3 d-flex align-items-center justify-content-center">
                     <div id="colorlib-logo">@Html.ActionLink("VietNam Travel", "Index", "Home")</div>
                 </div>
-                <div class="col-6 text-center menu-1">
-                    <ul>
+                <div class="col-6 text-center navbar navbar-expand-sm">
+                    <ul class="navbar-nav">
                         <li class="@ViewBag.ActiveHome">
                             @Html.ActionLink("Home", "Index", "Home")
                         </li>
                         <li class="@ViewBag.ActiveTours">
                             @Html.ActionLink("Tours", "Tours", "Home")
-                        </li>
-                        <li class="@ViewBag.ActiveSearchTour">
-                            @Html.ActionLink("SearchTour", "SearchTour", "Booking")
                         </li>
                         <li class="@ViewBag.ActiveAbout">
                             @Html.ActionLink("About", "About", "Home")
@@ -25,44 +22,32 @@
                     </ul>
                 </div>
                 <div class="col-3">
-                    @if (Session["idUser"] != null)
-                    {
-                        <nav class="navbar navbar-expand-lg navbar-light text-center menu-1">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse text-light text-right" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item dropdown">
-                                        @{
-                                            var name = @Session["Name"].ToString();
-                                            var last_name = name.Split("".ToCharArray()).Last();
-                                        }
-                                        <a class="mr-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            WelCome: @last_name
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="@Url.Action("Profiles","Account")">Profiles</a>
-                                            <a class="dropdown-item" href="@Url.Action("OrderMagement","Bills",new { id = @Session["idUser"] })">Order Management</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="mr-3 ">
-                                            @Html.ActionLink("Logout", "Logout", "Account")
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    }
-                    else
-                    {
-                        <ul class="text-light text-right">
-                            <li class="mr-3">@Html.ActionLink("Login", "Login", "Account")</li>
-                            <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    <nav class="navbar navbar-expand-sm p-0">
+                        <ul class="navbar-nav">
+                            @if (Session["idUser"] != null)
+                            {
+                                <li class="nav-item dropdown">
+                                    @{
+                                        var name = @Session["Name"].ToString();
+                                        var last_name = name.Split("".ToCharArray()).Last();
+                                    }
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        WelCome: @last_name
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="@Url.Action("Profiles","Account")">Profiles</a>
+                                        <a class="dropdown-item" href="@Url.Action("OrderMagement","Bills",new { id = @Session["idUser"] })">Order Management</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item ml-5">@Html.ActionLink("Logout", "Logout", "Account", new { @class = "nav-link" })</li>
+                            }
+                            else
+                            {
+                                <li class="nav-item"">@Html.ActionLink("Login", "Login", "Account")</li>
+                                <li class="nav-item"">@Html.ActionLink("Register", "Register", "Account")</li>
+                            }
                         </ul>
-                    }
-
+                    </nav>
                 </div>
             </div>
         </div>
