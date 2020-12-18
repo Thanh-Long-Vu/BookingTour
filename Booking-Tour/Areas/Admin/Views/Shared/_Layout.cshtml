@@ -32,11 +32,12 @@
                 </a>
                 @if (Session["idUser"] != null)
                 {
-                    if(Session["Role"] == "admin")
+                    if (Session["Role"] == "admin")
                     {
                         <h4>Welcome Admin</h4>
                     }
-                    <a href="@Url.Action("Logout","Account")">Logout</a>
+                    @*<a href="@Url.Action("Logout","Account")">Logout</a>*@
+                    <li class="nav-item ml-5"><a href="/Account/Logout" class="nav-link">Logout</a></li>
                 }
             </nav>
         </header>

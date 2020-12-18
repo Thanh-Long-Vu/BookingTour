@@ -18,6 +18,10 @@ namespace Booking_Tour.Controllers
         ConnectDB_BookingTour db = new ConnectDB_BookingTour();
         public ActionResult Login()
         {
+            if (Session["idUser"] != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -71,7 +75,9 @@ namespace Booking_Tour.Controllers
                 if (check == null)
                 {
                     _user.password = GetMD5(_user.password);
+                    _user.avatar = "default-profile.jpg";
                     db.Configuration.ValidateOnSaveEnabled = false;
+
                     db.Users.Add(_user);
                     db.SaveChanges();
                     return RedirectToAction("Login", "Account");

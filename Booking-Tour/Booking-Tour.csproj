@@ -238,6 +238,45 @@
     <Content Include="Content\images\cover-img-3.jpg" />
     <Content Include="Content\images\cover-img-4.jpg" />
     <Content Include="Content\images\cover-img-5.jpg" />
+    <Content Include="Content\images\DescreptionTour\10.jpg" />
+    <Content Include="Content\images\DescreptionTour\18.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438539708714517.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438540903553635.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438542628130647.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438551665997440.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438552075212293.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438552650983938.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438553220600222.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438555518935121.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438555735940099.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438556066871244.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438557393740608.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438557644195787.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438558278797998.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438558539624538.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438558753832046.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438562336444783.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438564026162918.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438566124981830.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438566478451249.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438568575519283.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438569172718236.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438569434199392.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438571495541078.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438571674706185.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438571945561846.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438573510625276.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438573823958373.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438574071507001.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438575536730604.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438575762985943.png" />
+    <Content Include="Content\images\DescreptionTour\637438575941565763.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438577500483743.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438577783154126.jpg" />
+    <Content Include="Content\images\DescreptionTour\637438578000962598.jpg" />
+    <Content Include="Content\images\DescreptionTour\7.jpg" />
+    <Content Include="Content\images\DescreptionTour\8.jpg" />
+    <Content Include="Content\images\DescreptionTour\9.jpg" />
     <Content Include="Content\images\hotel-1.jpg" />
     <Content Include="Content\images\hotel-2.jpg" />
     <Content Include="Content\images\hotel-3.jpg" />
@@ -519,7 +558,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Content\images\DescreptionTour\" />
     <Folder Include="Tour_Images\" />
   </ItemGroup>
   <ItemGroup>

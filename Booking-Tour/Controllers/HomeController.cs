@@ -29,7 +29,7 @@ namespace Booking_Tour.Controllers
                                     select ot).Take(4);
             ViewBag.Tours = tours;
             ViewBag.RecommendedTours = recommendedTours;
-            ViewBag.Provinces = (from p in db.Provinces select p).ToList();
+            ViewBag.Provinces = (from p in db.Provinces select p).Take(3);
             return View();
         }
 
